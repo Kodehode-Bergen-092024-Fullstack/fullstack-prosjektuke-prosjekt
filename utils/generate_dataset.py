@@ -1,6 +1,5 @@
 import codecs
 from dataclasses import dataclass, asdict
-import itertools
 import random
 import json
 import os
@@ -84,9 +83,6 @@ all_properties = [*foods, *pets, *spaces, "vegetarian", "no pets"]
 class Person:
     name: str
     surname: str
-    # def __init__(self, name: str, surname: str) -> None:
-    #     self.name = name
-    #     self.surname = surname
 
 
 @dataclass
