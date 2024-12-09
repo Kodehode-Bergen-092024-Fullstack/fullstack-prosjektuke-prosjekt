@@ -9,6 +9,7 @@ public class DataContext : Transaction<Family, Guid>
     // NOTE TO SELF: sxha092024 - Remove before publish
     // There is a tradeof to be made here with exposing this field as public in terms of ease-of-use,
     // however that's a footgun waiting to misfire in terms of ensuring data-validity
+    // TODO: Evaluate storing within context as a KV mapping and seralizing back to list from Dictionary.Values
     private List<Family> Families;
 
     private readonly ILogger _logger;
