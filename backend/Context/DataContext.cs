@@ -9,7 +9,7 @@ public class DataContext : Transaction<Family, Guid>
     // NOTE TO SELF: sxha092024 - Remove before publish
     // There is a tradeof to be made here with exposing this field as public in terms of ease-of-use,
     // however that's a footgun waiting to misfire in terms of ensuring data-validity
-    // TODO: Evaluate storing within context as a KV mapping and seralizing back to list from Dictionary.Values
+    // EVALUATE: Evaluate storing within context as a KV mapping and seralizing back to list from Dictionary.Values
     private List<Family> Families;
 
     private readonly ILogger _logger;
@@ -134,11 +134,31 @@ public class DataContext : Transaction<Family, Guid>
 
     public bool Update(Guid id, Family data)
     {
-        throw new NotImplementedException();
+        var index = Families.FindIndex(
+            (value) =>
+            {
+                return value.Id == id;
+            }
+        );
+        Families[index] = data;
+        return true;
     }
 
     public bool Remove(Guid id)
     {
-        throw new NotImplementedException();
+        var removedCount = Families.RemoveAll(
+            (value) =>
+            {
+                return value.Id == id;
+            }
+        );
+        if (removedCount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
