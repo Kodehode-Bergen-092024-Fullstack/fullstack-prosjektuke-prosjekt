@@ -7,9 +7,6 @@ public class Family
     [JsonPropertyName("id")]
     public required Guid Id { get; set; }
 
-    [JsonPropertyName("image")]
-    public required byte[] Image { get; set; }
-
     [JsonPropertyName("name")]
     public required string Name { get; set; }
 
@@ -22,6 +19,9 @@ public class Family
     [JsonPropertyName("preferences")]
     public required string[] Preferences { get; set; }
 
-    [JsonPropertyName("members")]
-    public required Person[] Members { get; set; }
+    [JsonPropertyName("image")]
+    public required string Image { get; set; }
+
+    // [JsonPropertyName("members")]
+    // public required Person[] Members { get; set; }
 }
