@@ -123,7 +123,7 @@ public class DataContext : Transaction<Family, Guid>
         }
     }
 
-    public Family Get(Guid id)
+    public Family? Get(Guid id)
     {
         var family = (from _family in Families where _family.Id == id select _family).First();
         return family;
