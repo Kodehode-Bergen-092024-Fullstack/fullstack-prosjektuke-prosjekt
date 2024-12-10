@@ -72,63 +72,80 @@ names = [
 
 foods = ["pinnekjøtt", "ribbe", "juleskinke", "grandiosa"]
 
-pets = ["cat", "dog"]
+allergens = ["cat", "dog", "nuts"]
 
-spaces = ["big space", "small space"]
+family_sizes = ["big", "small"]
 
-all_properties = [*foods, *pets, *spaces, "vegetarian", "no pets"]
+all_properties = [
+    *foods,
+    *allergens,
+    *family_sizes,
+    "vegetarian",
+    "no pets",
+    "religious",
+]
 
 
-@dataclass
-class Person:
-    name: str
-    surname: str
+# @dataclass
+# class Person:
+#     name: str
+#     surname: str
 
 
 @dataclass
 class Record:
     image: str
-    surname: str
+    # surname: str
     title: str
     description: str
     preferences: list[str]
-    members: list[Person]
+    # members: list[Person]
 
     @classmethod
     def generate(cls):
         surname = random.choice(surnames)
-        num_members = random.randint(1, 10)
-        members = []
-        for _ in range(num_members):
-            name = random.choice(names)
-            person = Person(name, surname)
-            members.append(person)
+        # num_members = random.randint(1, 10)
+        # members = []
+        # for _ in range(num_members):
+        #     name = random.choice(names)
+        #     person = Person(name, surname)
+        #     members.append(person)
 
-        num_properties = random.randint(1, 7)
-        _properties = []
-        pet = bool(random.randint(0, 1))
+        num_properties = random.randint(1, len(all_properties))
+        properties = []
+        religious = bool(random.randint(0, 1))
+        kids = bool(random.randint(0, 1))
+        if religious:
+            properties.append("religious")
+        if kids:
+            properties.append("children")
         vegetarian = bool(random.randint(0, 1))
         for _ in range(num_properties):
             choice = random.choice(all_properties)
-            if pet and choice in pets:
-                _properties.append(choice)
-            elif not pet:
-                _properties.append("no pets")
             if (
                 not vegetarian
                 and choice in foods
-                and not any(food in _properties for food in foods)
+                and not any(food in properties for food in foods)
             ):
-                _properties.append(choice)
+                properties.append(choice)
             elif vegetarian:
-                _properties.append("vegetarian")
-            if choice in spaces and not any(space in _properties for space in spaces):
-                _properties.append(choice)
+                properties.append("vegetarian")
+            if choice in family_sizes and not any(
+                space in properties for space in family_sizes
+            ):
+                properties.append(choice)
         description = f"Lorem Ipsum {surname} family dolor sit amet, consectetur"
         title = f"The {surname} family"
-        image = ""
+        image = "/image/family/"
 
-        return cls(image, surname, title, description, list(set(_properties)), members)
+        return cls(
+            image=image,
+            # surname,
+            title=title,
+            description=description,
+            preferences=list(set(properties)),
+            # members=members
+        )
 
     def to_dict(self):
         return asdict(self)
