@@ -35,6 +35,10 @@
 
             omnisharp-roslyn
             csharpier
+
+            # scripting / data-generation
+            python313
+            ruff
           ];
           shellHook = ''
             export DOTNET_ROOT="${dotnetPkg}";
