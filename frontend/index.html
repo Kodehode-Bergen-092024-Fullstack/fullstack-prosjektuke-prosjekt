@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Family Connection</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Family Connect</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Merry Christmas</h1>
-        <p>Connect your name to a family at Christmas celebrations.</p>
-    </header>
+  <header class="header">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#families">Families</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="form-section">
-            <div class="form-container">
-                <input type="text" id="name" placeholder="Name">
-                <input type="text" id="city" placeholder="City">
-                <input type="text" id="preference" placeholder="Preference">
-                <button onclick="searchFamilies()">Search</button>
-            </div>
-        </section>
+  <section class="home">
+    <h1>Celebrate together</h1>
+    <p>Connect with families to share the joy of Christmas.</p>
+    
+  </section>
 
-        <section class="content">
-            <aside class="filters">
-                <h3>Filters</h3>
-                <ul>
-                    <li><input type="checkbox" id="noPets"> No Pets</li>
-                    <li><input type="checkbox" id="vegetarian"> Vegetarian</li>
-                    <li><input type="checkbox" id="largeSpace"> Large Space</li>
-                    <!-- Add more filters -->
-                </ul>
-            </aside>
+  <section id="about" class="about">
+    <div>
+      <h2>Celebrate together</h2>
+      <h3>Connect with families in need</h3>
+      <p>
+        We connect individuals with families in need, creating joyful celebrations during the holiday season. Experience the warmth of togetherness by matching with families based on various preferences such as household size, dietary restrictions, and more. Join us in Bergen, where you can help make a difference this Christmas by sharing love and joy with those who need it most.
+      </p>
+    </div>
+    <img src="./image/image1.jpg" alt="Families celebrating together">
+  </section>
+  
 
-            <div class="family-grid" id="familyGrid">
-                <!-- Family cards will be dynamically rendered here -->
-            </div>
-        </section>
-    </main>
+  <section id="families" class="families">
+    <h2>Our Families</h2>
+    <div class="family-list">
+      <!-- JavaScript ile eklenecek aile kartları -->
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Join us for Christmas</h2>
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
