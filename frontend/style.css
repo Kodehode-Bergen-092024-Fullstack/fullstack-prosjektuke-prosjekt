@@ -1,13 +1,18 @@
 /* General Settings */
 body {
+
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', cursive;
     line-height: 1.6;
     color: #333;
     background-color:#b3aea3;
-    
+    background: url('./image/bg/image2.jpg') no-repeat center center/cover;
 
   }
+main{
+ 
+}
+   
   
   a {
     text-decoration: none;
@@ -33,6 +38,7 @@ body {
   .header nav ul {
     display: flex;
     gap: 20px;
+
   }
   
   .header nav ul li a {
@@ -44,6 +50,12 @@ body {
   .header nav ul li a:hover {
     color: #28a745;
   }
+  @media (max-width: 768px) {
+    .header nav ul {
+      display: none;
+    }
+  }
+  
   
   /* Home section */
   .home {
@@ -53,7 +65,6 @@ body {
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background: url('./image/image2.jpg') no-repeat center center/cover;
     color: white;
     padding: 0 20px;
   }
@@ -81,7 +92,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 50px 20px;
-    background-color: #E4DBC8;
     color: #333;
     gap: 20px;
   }
@@ -116,8 +126,9 @@ body {
   
   /* Families section */
   .families {
+  
     padding: 50px 20px;
-    background-color: #f0f0f0;
+  
   }
   
   .families h2 {
@@ -149,8 +160,9 @@ body {
   
   /* Contact section*/
   .contact {
+   
     padding: 50px 20px;
-    background-color: #fff;
+  
   }
   
   .contact h2 {
@@ -162,6 +174,7 @@ body {
   form {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 30%;
   }
   
   form label {
