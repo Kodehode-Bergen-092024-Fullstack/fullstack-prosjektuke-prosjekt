@@ -62,16 +62,16 @@ public class DataContext : Transaction<Family, Guid>
                     var familyList = new List<Family>();
                     foreach (var item in data)
                     {
+                        var id = Guid.CreateVersion7();
                         familyList.Add(
                             new Family
                             {
-                                Id = Guid.CreateVersion7(),
-                                Image = item.Image,
+                                Id = id,
+                                Image = $"/image/family/{id}.jpg",
                                 Name = item.Name,
                                 Description = item.Description,
                                 Preferences = item.Preferences,
                                 Title = item.Title,
-                                Members = item.Members,
                             }
                         );
                     }
