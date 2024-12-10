@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Family Connection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Merry Christmas</h1>
+        <p>Connect your name to a family at Christmas celebrations.</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="form-container">
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="preference" placeholder="Preference">
+                <button onclick="searchFamilies()">Search</button>
+            </div>
+        </section>
+
+        <section class="content">
+            <aside class="filters">
+                <h3>Filters</h3>
+                <ul>
+                    <li><input type="checkbox" id="noPets"> No Pets</li>
+                    <li><input type="checkbox" id="vegetarian"> Vegetarian</li>
+                    <li><input type="checkbox" id="largeSpace"> Large Space</li>
+                    <!-- Add more filters -->
+                </ul>
+            </aside>
+
+            <div class="family-grid" id="familyGrid">
+                <!-- Family cards will be dynamically rendered here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
