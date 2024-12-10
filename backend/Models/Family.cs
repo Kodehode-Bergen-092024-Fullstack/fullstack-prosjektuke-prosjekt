@@ -5,7 +5,7 @@ namespace prosjekt_uke.Models;
 public class Family
 {
     [JsonPropertyName("id")]
-    public required Guid Id { get; set; }
+    public required Guid Id { get; set; } = Guid.CreateVersion7();
 
     [JsonPropertyName("name")]
     public required string Name { get; set; }
