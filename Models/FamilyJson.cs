@@ -5,7 +5,7 @@ namespace prosjekt_uke.Models;
 public class FamilyJson
 {
     [JsonPropertyName("id")]
-    public required int Id { get; set; }
+    public required string Id { get; set; }
 
     [JsonPropertyName("name")]
     public required string Name { get; set; }
