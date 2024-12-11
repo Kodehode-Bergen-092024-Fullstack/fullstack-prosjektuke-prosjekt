@@ -4,6 +4,7 @@ using prosjekt_uke.Models;
 
 [ApiController]
 [Route("api")]
+// TODO: DTO for ID-less objects such that validation and assigment is our concern
 public class ApiController : ControllerBase
 {
     private readonly DataContext _dataContext;
