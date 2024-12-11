@@ -4,7 +4,7 @@ let familiesData;
 window.onload = async function () {
   // TODO: after syncing tree and restructuring, change to /api/families/all
   familiesData = (await (await fetch("/api/family/all")).json());
-  displayFamilies(familiesData.families);
+  displayFamilies(familiesData);
   document.querySelectorAll("input[type=checkbox]").forEach((checkboxElem) => {
     checkboxElem.addEventListener("click", applyFilters);
   });
