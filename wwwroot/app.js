@@ -3,7 +3,7 @@ let familiesData;
 // Show all families when the page is loaded, attach applyFilters to checkboxes for immidiate feedback
 window.onload = async function () {
   // TODO: after syncing tree and restructuring, change to /api/families/all
-  familiesData = (await (await fetch("/frontend/families.json")).json());
+  familiesData = (await (await fetch("/api/family/all")).json());
   displayFamilies(familiesData.families);
   document.querySelectorAll("input[type=checkbox]").forEach((checkboxElem) => {
     checkboxElem.addEventListener("click", applyFilters);

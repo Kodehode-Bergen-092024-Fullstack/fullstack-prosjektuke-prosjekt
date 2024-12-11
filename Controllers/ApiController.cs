@@ -7,15 +7,17 @@ using prosjekt_uke.Models;
 public class ApiController : ControllerBase
 {
     private readonly DataContext _dataContext;
+    private readonly ILogger<ApiController> _logger;
 
     [HttpGet("family/all")]
     public IActionResult GetFamilies()
     {
-        return Ok(new { Families = _dataContext.AsEnumerable() });
+        _logger.LogInformation("");
+        return Ok(new { Families = _dataContext.AsEnumerable().ToList() });
     }
 
     [HttpGet("family/{id}")]
-    public IActionResult GetFamily(Guid id)
+    public IActionResult GetFamily(int id)
     {
         var family = _dataContext.Get(id);
 
@@ -44,7 +46,7 @@ public class ApiController : ControllerBase
     }
 
     [HttpDelete("family/{id}")]
-    public IActionResult DeleteFamily(Guid id)
+    public IActionResult DeleteFamily(int id)
     {
         bool deleted = _dataContext.Remove(id);
         if (deleted)
@@ -58,7 +60,7 @@ public class ApiController : ControllerBase
     }
 
     [HttpPut("family/{id}")]
-    public IActionResult ReplaceFamily(Guid id, [FromBody] Family family)
+    public IActionResult ReplaceFamily(int id, [FromBody] Family family)
     {
         var replaced = _dataContext.Update(id, family);
         if (replaced)
@@ -72,8 +74,9 @@ public class ApiController : ControllerBase
         throw new NotImplementedException();
     }
 
-    public ApiController(DataContext dataContext)
+    public ApiController(DataContext dataContext, ILogger<ApiController> logger)
     {
         _dataContext = dataContext;
+        _logger = logger;
     }
 }
