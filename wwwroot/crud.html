@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD | Christmas family connect</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/crud.css">
+    <script defer="true" src="js/crud.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>CRUD toolkit</h1>
+    </header>
+    <main>
+      <div id="container">
+        <div id="create">
+          <h2>Create</h2>
+          <form action="/api/family" method="post">
+            <label for="create-name">Family name</label>
+            <input type="text" name="name" id="create-name" placeholder="The Smithies">
+            <label for="create-size">Family size</label>
+            <input type="number" name="familySize" id="create-size" placeholder="4">
+            <label for="createDescription">Description</label>
+            <textarea name="description" id="createDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <label for="create-diet">Diet</label>
+            <select name="diet" id="create-diet"></select>
+            <label for="create-habits">Habits</label>
+            <select name="habits" id="create-habits"></select>
+            <label for="create-has-pets">Pets</label>
+            <input type="checkbox" name="pets" id="create-pets">
+            <label for="create-allergies">Allergies</label>
+            <select name="allergies" id="create-allergies"></select>
+            <label for="create-children">children</label>
+            <select name="childrenAgeGroups" id="create-children"></select>
+            <label for="image">Image</label>
+            <input type="file" name="image" id="create-image">
+            <button type="submit">Execute</button>
+          </form>
+        </div>
+        <div id="update">
+          <h2>Update</h2>
+          <form action="">
+            <button type="submit">Execute</button>
+          </form>
+        </div>
+        <div id="delete">
+          <h2>Delete</h2>
+          <form action="">
+            <button type="submit">Execute</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
