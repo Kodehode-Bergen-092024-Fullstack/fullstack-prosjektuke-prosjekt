@@ -1,5 +1,4 @@
-// Fetch JSON data
-const familiesData = {
+{
   "families": [
     {
       "id": 1,
@@ -16,13 +15,13 @@ const familiesData = {
     {
       "id": 2,
       "name": "The Festive Family",
-      "familySize": 6,
-      "description": "A warm and lively family that enjoys celebrating Christmas with loved ones.",
+      "familySize": 12,
+      "description": "A warm and lively extended family that loves celebrating Christmas together.",
       "diet": ["Halal"],
-      "habits": ["No alcohol"],
-      "hasPets": true,
-      "allergies": ["gluten"],
-      "childrenAgeGroups": ["0-3", "4-10"],
+      "habits": ["Non-smoker", "No alcohol"],
+      "hasPets": false,
+      "allergies": ["none"],
+      "childrenAgeGroups": ["0-3", "4-10", "11-17"],
       "image": "./image/familie/family2.jpg"
     },
     {
@@ -168,7 +167,8 @@ const familiesData = {
       "allergies": ["none"],
       "childrenAgeGroups": [],
       "image": "./image/familie/family14.jpg"
-    },{
+    },
+    {
       "id": 15,
       "name": "The Grandparent's Christmas",
       "familySize": 2,
@@ -242,48 +242,3 @@ const familiesData = {
     }
   ]
 }
-
-// Function to add families to the page
-function displayFamilies(families) {
-  const familyList = document.querySelector('.family-list');
-  familyList.innerHTML = '';
-  
-  families.forEach(family => {
-    const familyCard = document.createElement('div');
-    familyCard.classList.add('family-card');
-    familyCard.innerHTML = `
-      <img src="${family.image}" alt="${family.name}">
-      <h3>${family.name}</h3>
-      <p><strong>Family Size:</strong> ${family.familySize} people</p>
-      <p>${family.description}</p>
-      <button class="book-btn" data-family-id="${family.id}">Book with this family</button>
-    `;
-    familyList.appendChild(familyCard);
-  });
-  
-  document.querySelectorAll('.book-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const familyId = this.getAttribute('data-family-id');
-      alert(`You have booked a Christmas celebration with family ID: ${familyId}`);
-    });
-  });
-}
-
-
-//Accordion open/close function
-const accordionHeaders = document.querySelectorAll('.accordion-header');
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', () => {
-    const body = header.nextElementSibling;
-    body.style.display = body.style.display === 'block' ? 'none' : 'block';
-  });
-});
-
-// Show all families when the page is loaded
-window.onload = function() {
-  displayFamilies(familiesData.families);
-}
-
-// Click the apply filter button
-const applyFiltersButton = document.getElementById('apply-filters');
-applyFiltersButton.addEventListener('click', applyFilters);

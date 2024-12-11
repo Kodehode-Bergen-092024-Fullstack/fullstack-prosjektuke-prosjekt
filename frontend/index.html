@@ -1,93 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christmas Family Connect</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="header">
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#families">Families</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-<main>
-  <section class="home">
-    <h1>Celebrate Together</h1>
-    <br>
-    <p>Connect with families to share the joy of Christmas.</p>
-    
-  </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Family Connect</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#families">Families</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section id="about" class="about">
-    <div>
-      <h2>Celebrate together</h2>
-      <h3>Connect with families in need</h3>
-      <p>
-        We connect individuals with families in need, creating joyful celebrations during the holiday season. Experience the warmth of togetherness by matching with families based on various preferences such as household size, dietary restrictions, and more. Join us in Bergen, where you can help make a difference this Christmas by sharing love and joy with those who need it most.
-      </p>
-    </div>
-    <img src="./image/bg/image1.jpg" alt="Families celebrating together">
-  </section>
-  
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="home">
+        <h1>🎄 Celebrate Together 🎉</h1>
+        <p>Connect with families to share the joy of Christmas.</p>
+      </section>
 
-  <section id="families" class="families">
-    <h2>Filter Families</h2>
-    <form id="filter-form">
-      <label for="diet">Dietary Preferences:</label>
-      <input type="checkbox" name="diet" value="vegetarian"> Vegetarian
-      <input type="checkbox" name="diet" value="halal"> Halal
-      <input type="checkbox" name="diet" value="lactose-free"> Lactose-Free
-  
-      <label for="habits">Habits:</label>
-      <input type="checkbox" name="habits" value="smoker"> Smoker
-      <input type="checkbox" name="habits" value="alcohol"> Drinks Alcohol
-  
-      <label for="allergies">No Allergies To:</label>
-      <input type="checkbox" name="allergies" value="eggs"> Eggs
-      <input type="checkbox" name="allergies" value="nuts"> Nuts
-      <input type="checkbox" name="allergies" value="gluten"> Gluten
-  
-      <label for="children-age">Children's Age Group:</label>
-      <input type="checkbox" name="children-age" value="0-3"> 0-3
-      <input type="checkbox" name="children-age" value="4-10"> 4-10
-      <input type="checkbox" name="children-age" value="11-17"> 11-17
-  
-      <button type="button" id="apply-filters" class="btn-primary">Apply Filters</button>
-    </form>
-  
-    <h2>Our Families</h2>
-    <div class="family-list">
-      <!-- JavaScript ile filtreye uygun aileler buraya eklenecek -->
-    </div>
-  </section>
-  
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div>
+          <h2>Celebrate together 🎉🎉</h2>
 
-  <section id="contact" class="contact">
-    <h2>Join us for Christmas</h2>
-    <form id="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+          <h3>Connect with families in need</h3>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+          <p>
+            We connect individuals with families in need, creating joyful
+            celebrations during the holiday season. Experience the warmth of
+            togetherness by matching with families based on various preferences
+            such as household size, dietary restrictions, and more. Join us in
+            Bergen, where you can help make a difference this Christmas by
+            sharing love and joy with those who need it most.
+          </p>
+        </div>
 
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" required>
+        <img src="./image/bg/image1.jpg" alt="Families celebrating together" />
+      </section>
+      <!-- Filter and Family List -->
+      <section id="content-section">
+        <div id="filters">
+          <h2>🎄 Filter Families 🎁</h2>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message"></textarea>
+          <div class="accordion">
+            <!-- Household Size -->
+            <div class="accordion-item">
+              <button class="accordion-header">Household Size</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="household-size" value="1-2" />
+                  1-2 people</label
+                >
+                <label
+                  ><input type="checkbox" name="household-size" value="3-4" />
+                  3-4 people</label
+                >
+                <label
+                  ><input type="checkbox" name="household-size" value="5-6" />
+                  5-6 people</label
+                >
+                <label
+                  ><input type="checkbox" name="household-size" value="7+" /> 7+
+                  people</label
+                >
+              </div>
+            </div>
 
-      <button type="submit" class="btn-primary">Submit</button>
-    </form>
-  </section>
-</main>
-  <script src="app.js"></script>
-</body>
+            <!-- Number of People to Celebrate With -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Number of People to Celebrate With
+              </button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="celebration-size" value="1-2" />
+                  1-2 people</label
+                >
+                <label
+                  ><input type="checkbox" name="celebration-size" value="3-4" />
+                  3-4 people</label
+                >
+                <label
+                  ><input type="checkbox" name="celebration-size" value="5-6" />
+                  5-6 people</label
+                >
+                <label
+                  ><input type="checkbox" name="celebration-size" value="7+" />
+                  7+ people</label
+                >
+              </div>
+            </div>
+
+            <!-- Dietary Preferences -->
+            <div class="accordion-item">
+              <button class="accordion-header">Dietary Preferences</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="diet" value="vegetarian" />
+                  Vegetarian</label
+                >
+                <label
+                  ><input type="checkbox" name="diet" value="halal" />
+                  Halal</label
+                >
+                <label
+                  ><input type="checkbox" name="diet" value="lactose-free" />
+                  Lactose-Free</label
+                >
+              </div>
+            </div>
+
+            <!-- Habits -->
+            <div class="accordion-item">
+              <button class="accordion-header">Habits</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="habits" value="smoker" />
+                  Smoker</label
+                >
+                <label
+                  ><input type="checkbox" name="habits" value="alcohol" />
+                  Drinks Alcohol</label
+                >
+              </div>
+            </div>
+            <!-- Pets -->
+            <div class="accordion-item">
+              <button class="accordion-header">Pets</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="radio" name="pets" value="yes" /> Yes (Has
+                  Pets)</label
+                >
+                <label
+                  ><input type="radio" name="pets" value="no" /> No (No
+                  Pets)</label
+                >
+              </div>
+            </div>
+
+            <!-- Pet Allergies -->
+            <div class="accordion-item">
+              <button class="accordion-header">Pet Allergies</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="pet-allergies" value="cats" />
+                  Cats</label
+                >
+                <label
+                  ><input type="checkbox" name="pet-allergies" value="dogs" />
+                  Dogs</label
+                >
+                <label
+                  ><input type="checkbox" name="pet-allergies" value="other" />
+                  Other</label
+                >
+              </div>
+            </div>
+
+            <!-- No Allergies To -->
+            <div class="accordion-item">
+              <button class="accordion-header">No Allergies To</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="allergies" value="eggs" />
+                  Eggs</label
+                >
+                <label
+                  ><input type="checkbox" name="allergies" value="nuts" />
+                  Nuts</label
+                >
+                <label
+                  ><input type="checkbox" name="allergies" value="gluten" />
+                  Gluten</label
+                >
+                <label
+                  ><input type="checkbox" name="allergies" value="other" />
+                  Other</label
+                >
+                <textarea
+                  id="other-allergy"
+                  placeholder="Please specify other allergies..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Children's Age Group -->
+            <div class="accordion-item">
+              <button class="accordion-header">Children's Age Group</button>
+              <div class="accordion-body">
+                <label
+                  ><input type="checkbox" name="children-age" value="0-3" />
+                  0-3</label
+                >
+                <label
+                  ><input type="checkbox" name="children-age" value="4-10" />
+                  4-10</label
+                >
+                <label
+                  ><input type="checkbox" name="children-age" value="11-17" />
+                  11-17</label
+                >
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="accordion-item">
+              <button class="accordion-header">Additional Information</button>
+              <div class="accordion-body">
+                <textarea
+                  id="additional-message"
+                  placeholder="Add any additional information here..."
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="apply-filters" class="btn-primary">
+            Apply Filters
+          </button>
+        </div>
+
+        <!-- Families Section -->
+        <section id="families" class="families">
+          <h2> 👨‍👩‍👧  Our Families ❤️</h2>
+          <div class="family-list"></div>
+        </section>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <h2>Join us for Christmas</h2>
+
+        <form id="contact-form">
+          <label for="name">Name</label>
+
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone</label>
+
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="message">Message</label>
+
+          <textarea id="message" name="message"></textarea>
+
+          <button type="submit" class="btn-primary">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
