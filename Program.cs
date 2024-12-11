@@ -2,6 +2,7 @@ using System.Net;
 using System.Reflection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using prosjekt_uke.Context;
 using Serilog;
 using Serilog.Formatting.Compact;
 using Serilog.Formatting.Json;
@@ -24,6 +25,7 @@ try
 
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddSerilog();
+    builder.Services.AddSingleton<DataContext>();
     builder.Services.AddControllersWithViews();
     builder.Services.AddRouting(options =>
     {
