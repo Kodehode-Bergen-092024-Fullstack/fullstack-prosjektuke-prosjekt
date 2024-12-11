@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Text.Json;
 using prosjekt_uke.Interfaces;
 using prosjekt_uke.Models;
 
 namespace prosjekt_uke.Context;
 
-public class DataContext : Transaction<Family, Guid>
+public class DataContext : Transaction<Family, Guid>, IEnumerable<Family>
 {
     // EVALUATE: Evaluate storing within context as a KV mapping and seralizing back to list from Dictionary.Values
     private List<Family> Families;
@@ -114,7 +115,7 @@ public class DataContext : Transaction<Family, Guid>
         );
         if (alreadyExists)
         {
-            throw new ArgumentException($"Familiy with {data.Id} already exists");
+            return false;
         }
         else
         {
@@ -157,5 +158,15 @@ public class DataContext : Transaction<Family, Guid>
         {
             return false;
         }
+    }
+
+    public IEnumerator<Family> GetEnumerator()
+    {
+        return Families.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return Families.GetEnumerator();
     }
 }
