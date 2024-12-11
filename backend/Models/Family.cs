@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using prosjekt_uke.DTO;
 
 namespace prosjekt_uke.Models;
 

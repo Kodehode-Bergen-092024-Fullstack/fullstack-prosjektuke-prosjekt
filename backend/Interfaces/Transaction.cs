@@ -8,7 +8,6 @@ public interface Transaction<T, Id>
     /// <summary>
     /// Add new data to the backing storage
     /// </summary>
-    /// <exception cref="ArgumentException">Thrown if data with ID already exists</exception>
     /// <param name="data">Data which contains an id of Id</param>
     /// <returns>true if successful, false if not</returns>
     bool Add(T data);
