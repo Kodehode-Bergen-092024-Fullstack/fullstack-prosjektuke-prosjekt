@@ -157,8 +157,20 @@ public class DataContext : Transaction<Family, Guid>, IEnumerable<Family>
 
     public Family? Get(Guid id)
     {
-        var family = (from _family in Families where _family.Id == id select _family).First();
-        return family;
+        try
+        {
+            var family = (from _family in Families where _family.Id == id select _family).Single();
+            return family;
+        }
+        catch (InvalidOperationException exc)
+        {
+            _logger.LogCritical("Cannot find unique element of id {id}. {@exc}", id, exc);
+        }
+        catch (ArgumentNullException exc)
+        {
+            _logger.LogError("{@exc}", exc);
+        }
+        return null;
     }
 
     public bool Update(Guid id, Family data)
