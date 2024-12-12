@@ -37,4 +37,12 @@ async function onLoad() {
     totalProperties = diets.size + habits.size + allergies.size + childrenAgeGroups.size;
     if (enableDebugLogging) { console.log(`Total properties: ${totalProperties}`); }
 }
+
+async function CreateSubmit() {
+    console.log("Called: CreateSubmit");
+}
+async function UpdateSubmit() {
+    console.log("Called: UpdateSubmit");
+}
+
 document.addEventListener("DOMContentLoaded", onLoad);
