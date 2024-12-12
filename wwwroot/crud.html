@@ -35,18 +35,40 @@
             <select name="childrenAgeGroups" id="create-children"></select>
             <label for="image">Image</label>
             <input type="file" name="image" id="create-image">
-            <button type="submit">Execute</button>
+            <button type="button" onclick="CreateSubmit()">Execute</button>
           </form>
         </div>
         <div id="update">
           <h2>Update</h2>
-          <form action="">
-            <button type="submit">Execute</button>
+          <form action="/api/family" method="put">
+            <label for="update-id">Family ID</label>
+            <select name="id" id="upload-id"></select>
+            <label for="update-name">Family name</label>
+            <input type="text" name="name" id="update-name" placeholder="The Smithies">
+            <label for="update-size">Family size</label>
+            <input type="number" name="familySize" id="update-size" placeholder="4">
+            <label for="updateDescription">Description</label>
+            <textarea name="description" id="updateDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <label for="update-diet">Diet</label>
+            <select name="diet" id="update-diet"></select>
+            <label for="update-habits">Habits</label>
+            <select name="habits" id="update-habits"></select>
+            <label for="update-has-pets">Pets</label>
+            <input type="checkbox" name="pets" id="update-pets">
+            <label for="update-allergies">Allergies</label>
+            <select name="allergies" id="update-allergies"></select>
+            <label for="update-children">children</label>
+            <select name="childrenAgeGroups" id="update-children"></select>
+            <label for="image">Image</label>
+            <input type="file" name="image" id="update-image">
+            <button type="button" onclick="UpdateSubmit()">Execute</button>
           </form>
         </div>
         <div id="delete">
           <h2>Delete</h2>
           <form action="">
+            <label for="update-id">Family ID</label>
+            <select name="id" id="delete-id"></select>
             <button type="submit">Execute</button>
           </form>
         </div>
