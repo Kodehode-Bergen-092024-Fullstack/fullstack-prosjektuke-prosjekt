@@ -24,15 +24,23 @@
             <label for="createDescription">Description</label>
             <textarea name="description" id="createDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
             <label for="create-diet">Diet</label>
-            <select name="diet" id="create-diet"></select>
+            <select name="diet" id="create-diet">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="create-habits">Habits</label>
-            <select name="habits" id="create-habits"></select>
+            <select name="habits" id="create-habits">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="create-has-pets">Pets</label>
             <input type="checkbox" name="pets" id="create-pets">
             <label for="create-allergies">Allergies</label>
-            <select name="allergies" id="create-allergies"></select>
+            <select name="allergies" id="create-allergies">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="create-children">children</label>
-            <select name="childrenAgeGroups" id="create-children"></select>
+            <select name="childrenAgeGroups" id="create-children">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="image">Image</label>
             <input type="file" name="image" id="create-image">
             <button type="button" onclick="CreateSubmit()">Execute</button>
@@ -42,7 +50,9 @@
           <h2>Update</h2>
           <form action="/api/family" method="put">
             <label for="update-id">Family ID</label>
-            <select name="id" id="upload-id"></select>
+            <select name="id" id="upload-id">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="update-name">Family name</label>
             <input type="text" name="name" id="update-name" placeholder="The Smithies">
             <label for="update-size">Family size</label>
@@ -50,15 +60,23 @@
             <label for="updateDescription">Description</label>
             <textarea name="description" id="updateDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
             <label for="update-diet">Diet</label>
-            <select name="diet" id="update-diet"></select>
+            <select name="diet" id="update-diet">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="update-habits">Habits</label>
-            <select name="habits" id="update-habits"></select>
+            <select name="habits" id="update-habits">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="update-has-pets">Pets</label>
             <input type="checkbox" name="pets" id="update-pets">
             <label for="update-allergies">Allergies</label>
-            <select name="allergies" id="update-allergies"></select>
+            <select name="allergies" id="update-allergies">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="update-children">children</label>
-            <select name="childrenAgeGroups" id="update-children"></select>
+            <select name="childrenAgeGroups" id="update-children">
+              <option value="">--Select an entry--</option>
+            </select>
             <label for="image">Image</label>
             <input type="file" name="image" id="update-image">
             <button type="button" onclick="UpdateSubmit()">Execute</button>
@@ -68,7 +86,9 @@
           <h2>Delete</h2>
           <form action="">
             <label for="update-id">Family ID</label>
-            <select name="id" id="delete-id"></select>
+            <select name="id" id="delete-id">
+              <option value="">--Select an entry--</option>
+            </select>
             <button type="submit">Execute</button>
           </form>
         </div>
