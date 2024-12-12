@@ -22,5 +22,14 @@ form>* {
 
 select
 {
-    width: 12vw;
+    width: 100%;
+    min-width: 200px;
+}
+
+span {
+    padding: 1vh 0vh 1vh 0vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
