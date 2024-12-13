@@ -4,6 +4,7 @@ namespace prosjekt_uke.Models;
 
 public class FamilyJson
 {
+
     [JsonPropertyName("Id")]
     public required string Id { get; set; }
 
