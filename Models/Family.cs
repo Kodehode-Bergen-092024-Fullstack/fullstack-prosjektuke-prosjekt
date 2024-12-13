@@ -24,7 +24,7 @@ public class Family
 
     public string[] ChildrenAgeGroups { get; set; }
 
-    public string[] Pet;
+    public string[] Pet { get; set; }
 
     public string Image { get; set; }
 
