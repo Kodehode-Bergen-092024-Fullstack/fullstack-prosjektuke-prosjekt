@@ -4,36 +4,36 @@ namespace prosjekt_uke.Models;
 
 public class FamilyJson
 {
-    [JsonPropertyName("id")]
+    [JsonPropertyName("Id")]
     public required string Id { get; set; }
 
-    [JsonPropertyName("name")]
+    [JsonPropertyName("Name")]
     public required string Name { get; set; }
 
-    [JsonPropertyName("celebratesize")]
+    [JsonPropertyName("CelebrateSize")]
     public required int CelebrateSize { get; set; }
 
-    [JsonPropertyName("description")]
+    [JsonPropertyName("Description")]
     public required string Description { get; set; }
 
-    [JsonPropertyName("diet")]
+    [JsonPropertyName("Diet")]
     public required string[] Diet { get; set; }
 
-    [JsonPropertyName("habits")]
+    [JsonPropertyName("Habits")]
     public required string[] Habits { get; set; }
 
-    [JsonPropertyName("hasPets")]
+    [JsonPropertyName("HasPets")]
     public required bool HasPets { get; set; }
 
-    [JsonPropertyName("allergies")]
+    [JsonPropertyName("Allergies")]
     public required string[] Allergies { get; set; }
 
-    [JsonPropertyName("childrenAgeGroups")]
+    [JsonPropertyName("ChildrenAgeGroups")]
     public required string[] ChildrenAgeGroups { get; set; }
 
-    [JsonPropertyName("pet")]
+    [JsonPropertyName("Pet")]
     public required string[] Pet { get; set; }
 
-    [JsonPropertyName("image")]
+    [JsonPropertyName("Image")]
     public required string ImageUrl { get; set; }
 }
