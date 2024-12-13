@@ -2,8 +2,8 @@
 .code/
 .intellij/
 obj/
-source_data.json
 backup/
+/*.bak
 
 ############################################################
 #                                                          #
