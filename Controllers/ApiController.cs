@@ -36,6 +36,7 @@ public class ApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult GetFamily(Guid id)
     {
+        _logger.LogInformation("Family ID: {id}", id);
         var family = _dataContext.Get(id);
 
         if (family is not null)
@@ -60,6 +61,7 @@ public class ApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult CreateFamily([FromBody] FamilyDTO familyDTO)
     {
+        _logger.LogInformation("Family DTO: {@familyDTO}", familyDTO);
         bool added = _dataContext.Add(familyDTO, out var id);
         if (added)
         {
@@ -83,6 +85,7 @@ public class ApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult DeleteFamily(Guid id)
     {
+        _logger.LogInformation("Family ID: {id}", id);
         bool deleted = _dataContext.Remove(id);
         if (deleted)
         {
@@ -107,6 +110,7 @@ public class ApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult ReplaceFamily(Guid id, [FromBody] Family family)
     {
+        _logger.LogInformation("Family: {@family}", family);
         var replaced = _dataContext.Update(id, family);
         if (replaced)
         {
@@ -118,32 +122,6 @@ public class ApiController : ControllerBase
         }
         throw new NotImplementedException();
     }
-
-    // /// <summary>
-    // /// Updates an existing object with new field values
-    // /// </summary>
-    // /// <param name="id">Must exist</param>
-    // /// <param name="partialData">Represents a partially constructed object</param>
-    // /// <returns>Success status</returns>
-    // /// <response code="200">The object has been patched</response>
-    // /// <response code="400">The object could not be patched</response>
-    // [HttpPatch("family/{id}")]
-    // [ProducesResponseType(StatusCodes.Status200OK)]
-    // [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    // public IActionResult UpdateFamily(Guid id, [FromBody] PartialFamily partialData)
-    // {
-    //     var existingData = _dataContext.Get(id);
-    //     if (existingData is Family)
-    //     {
-    //         var patchedData = existingData;
-    //         patchedData.UpdateFromPartial(partialData);
-    //     }
-    //     else
-    //     {
-    //         return BadRequest(new { reason = "Object does not already exist" });
-    //     }
-    //     throw new NotImplementedException();
-    // }
 
     public ApiController(DataContext dataContext, ILogger<ApiController> logger)
     {
