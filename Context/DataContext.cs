@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Text.Json;
+using prosjekt_uke.DTO;
 using prosjekt_uke.Interfaces;
 using prosjekt_uke.Models;
 
 namespace prosjekt_uke.Context;
 
-public class DataContext : Transaction<Family, int>, IEnumerable<Family>
+public class DataContext : Transaction<Family, Guid>, IEnumerable<Family>
 {
     // EVALUATE: Evaluate storing within context as a KV mapping and seralizing back to list from Dictionary.Values
     private List<Family> Families;
@@ -30,6 +31,7 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
     */
     ~DataContext()
     {
+        Console.Error.WriteLine("Destructor hit");
         _logger.LogDebug("Destructor hit");
         SaveToDisk();
     }
@@ -41,11 +43,20 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
             using (var stream = File.Open("./data.json", FileMode.Open))
             {
                 _logger.LogInformation("Stream opened");
-                var data = JsonSerializer.Deserialize<List<Family>>(stream);
+                var data = JsonSerializer.Deserialize<List<FamilyJson>>(stream);
                 if (data is not null)
                 {
+                    // Is there a better way to do this? Yesn't
+                    List<Family> families = [];
+                    data.ForEach(
+                        (f) =>
+                        {
+                            var fam = new Family(f);
+                            families.Add(fam);
+                        }
+                    );
                     _logger.LogInformation("Data deserialized");
-                    return data;
+                    return families;
                 }
                 else
                 {
@@ -102,9 +113,9 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
     {
         try
         {
-            using (var stream = new StreamWriter(File.OpenWrite("./data.json")))
+            using (var stream = File.OpenWrite("./data.json"))
             {
-                stream.Write(JsonSerializer.Serialize(Families));
+                JsonSerializer.Serialize(stream, Families);
                 _logger.LogDebug("Successfully serialized data");
                 return true;
             }
@@ -116,8 +127,9 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
         return false;
     }
 
-    public bool Add(Family data)
+    public bool Add(Family data, out Guid id)
     {
+        id = data.Id;
         bool alreadyExists = Families.Any(
             (existing) =>
             {
@@ -131,17 +143,37 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
         else
         {
             Families.Add(data);
+            SaveToDisk();
             return true;
         }
     }
 
-    public Family? Get(int id)
+    public bool Add(FamilyDTO data, out Guid id)
     {
-        var family = (from _family in Families where _family.Id == id select _family).First();
-        return family;
+        // TODO: Validation / constructor from DTO
+        var family = new Family(data);
+        return Add(family, out id);
     }
 
-    public bool Update(int id, Family data)
+    public Family? Get(Guid id)
+    {
+        try
+        {
+            var family = (from _family in Families where _family.Id == id select _family).Single();
+            return family;
+        }
+        catch (InvalidOperationException exc)
+        {
+            _logger.LogCritical("Cannot find unique element of id {id}. {@exc}", id, exc);
+        }
+        catch (ArgumentNullException exc)
+        {
+            _logger.LogError("{@exc}", exc);
+        }
+        return null;
+    }
+
+    public bool Update(Guid id, Family data)
     {
         var index = Families.FindIndex(
             (value) =>
@@ -150,10 +182,11 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
             }
         );
         Families[index] = data;
+        SaveToDisk();
         return true;
     }
 
-    public bool Remove(int id)
+    public bool Remove(Guid id)
     {
         var removedCount = Families.RemoveAll(
             (value) =>
@@ -161,6 +194,7 @@ public class DataContext : Transaction<Family, int>, IEnumerable<Family>
                 return value.Id == id;
             }
         );
+        SaveToDisk();
         if (removedCount > 0)
         {
             return true;

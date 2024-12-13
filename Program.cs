@@ -3,6 +3,7 @@ using System.Reflection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using prosjekt_uke.Context;
+using prosjekt_uke.Services;
 using Serilog;
 using Serilog.Formatting.Compact;
 using Serilog.Formatting.Json;
@@ -26,6 +27,12 @@ try
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddSerilog();
     builder.Services.AddSingleton<DataContext>();
+    // We could so much more easily avoid having to run a background job if we used a database, but oh well.
+    builder.Services.AddBackgroundJob<DataBackgroundJob>(job =>
+    {
+        job.Cron = "*/1 * * * *";
+        job.RunImmediately = true;
+    });
     builder.Services.AddControllersWithViews();
     builder.Services.AddRouting(options =>
     {
@@ -43,9 +50,13 @@ try
                 Description = "Providing an API for booking celebrations with other families",
             }
         );
+        var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
     });
 
     var app = builder.Build();
+    // CRITICAL: Ensures background tasks are started
+    await app.Services.WarmUpAsync();
     // wwwroot
     app.UseDefaultFiles();
     app.UseStaticFiles();
