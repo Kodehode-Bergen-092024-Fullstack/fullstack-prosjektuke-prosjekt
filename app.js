@@ -1,5 +1,5 @@
 //  API URL and global variables
-const API_URL = "data.json";
+const API_URL = "./data.json";
 let families = [];
 const output = document.querySelector(".family-list");
 const searchInput = document.getElementById("search");
