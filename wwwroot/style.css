@@ -111,10 +111,10 @@ ul {
   max-width: 50%;
 }
 .text-container {
-  background-color: rgba(223, 214, 132, 0.3); /* Şeffaf beyaz */
+  background-color: rgba(223, 214, 132, 0.3); 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   border: 2px solid #d4af37;
 }
 
@@ -188,7 +188,7 @@ ul {
 }
 
 /* Filtre section*/
-/* Filtreleme Bölümü */
+
 #filters {
   margin-top: 6%;
   flex: 0 0 30%; 
@@ -206,35 +206,35 @@ ul {
   color: #b71c1c;
   font-family: "Pacifico", cursive;
   margin-bottom: 20px;
-  text-align: center; /* Başlık ortalanır */
+  text-align: center;
   font-size: 1.8rem;
 }
 
-/* 🟢 Search (Arama) Kutusu */
+/* 🟢 Search */
 #search {
-  width: 60%; /* Tam genişlik */
-  padding: 12px 15px; /* İç boşluk */
-  border: 2px solid #d4af37; /* Altın çerçeve */
-  border-radius: 8px; /* Yuvarlak köşeler */
-  font-size: 16px; /* Yazı boyutu */
-  color: #333; /* Yazı rengi */
-  background-color: #ffffff; /* Arka plan */
-  margin-bottom: 20px; /* Alttaki bölüme boşluk bırak */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  width: 60%; 
+  padding: 12px 15px;
+  border: 2px solid #d4af37; 
+  border-radius: 8px;
+  font-size: 16px; 
+  color: #333;
+  background-color: #ffffff; 
+  margin-bottom: 20px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  
 }
 
 #search::placeholder {
-  color: #999; /* Placeholder rengi */
-  font-style: italic; /* İtalik yazı stili */
+  color: #999; 
+  font-style: italic; 
 }
 
 #search:focus {
-  outline: none; /* Varsayılan mavi çerçeveyi kaldır */
-  border-color: #b71c1c; /* Kırmızı kenarlık */
-  box-shadow: 0 0 8px #b71c1c; /* Odağındaki gölge */
+  outline: none; 
+  border-color: #b71c1c; 
+  box-shadow: 0 0 8px #b71c1c; 
 }
 
-/* Accordion Ayarları */
+/* Accordion*/
 .accordion-item {
   margin-bottom: 10px;
 }
@@ -266,30 +266,30 @@ ul {
   display: block;
 }
 
-/* 🟡 Apply (Uygula) Butonu */
+/* 🟡 Apply */
 .btn-primary {
   display: block;
-  width: 100%; /* Buton tam genişlikte olur */
+  width: 100%; 
   text-align: center;
-  padding: 12px 0; /* Dikey boşluk */
-  font-size: 16px; /* Yazı boyutu */
+  padding: 12px 0; 
+  font-size: 16px;
   font-weight: bold;
-  background-color: #b71c1c; /* Kırmızı arka plan */
-  color: white; /* Beyaz yazı rengi */
+  background-color: #b71c1c; 
+  color: white; 
   border: none; 
-  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  border-radius: 8px; 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-primary:hover {
-  background-color: #d32f2f; /* Hover rengi */
-  transform: scale(1.02); /* Buton biraz büyür */
+  background-color: #d32f2f; 
+  transform: scale(1.02); 
 }
 
 .btn-primary:active {
-  transform: scale(0.98); /* Tıklanınca küçülür */
+  transform: scale(0.98); 
 }
 
 
@@ -316,7 +316,7 @@ ul {
 .family-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* İçeriği kartın altına ve üstüne yayar */
+  justify-content: space-between; 
   height: 450px; 
   background-color: white;
   border: 2px solid #d4af37;
