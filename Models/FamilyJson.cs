@@ -31,6 +31,9 @@ public class FamilyJson
     [JsonPropertyName("childrenAgeGroups")]
     public required string[] ChildrenAgeGroups { get; set; }
 
+    [JsonPropertyName("pet")]
+    public required string[] Pet { get; set; }
+
     [JsonPropertyName("image")]
     public required string ImageUrl { get; set; }
 }

@@ -18,5 +18,7 @@ public class FamilyDTO
 
     public required string[] ChildrenAgeGroups { get; set; }
 
+    public required string[] Pet { get; set; }
+
     public required string Image { get; set; }
 }

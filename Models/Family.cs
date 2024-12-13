@@ -24,6 +24,8 @@ public class Family
 
     public string[] ChildrenAgeGroups { get; set; }
 
+    public string[] Pet;
+
     public string Image { get; set; }
 
     public Family(FamilyJson f)
@@ -44,6 +46,7 @@ public class Family
         Habits = f.Habits;
         HasPets = f.HasPets;
         Allergies = f.Allergies;
+        Pet = f.Pet;
         ChildrenAgeGroups = f.ChildrenAgeGroups;
         try
         {
@@ -70,6 +73,7 @@ public class Family
         HasPets = f.HasPets;
         Allergies = f.Allergies;
         ChildrenAgeGroups = f.ChildrenAgeGroups;
+        Pet = f.Pet;
         Image = f.Image;
     }
 }
