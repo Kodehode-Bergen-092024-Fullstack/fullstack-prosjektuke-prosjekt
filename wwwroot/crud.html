@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD | Christmas family connect</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/crud.css">
+    <script defer="true" src="js/crud.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>CRUD toolkit</h1>
+    </header>
+    <main>
+      <div id="container">
+        <div id="create">
+          <h2>Create</h2>
+          <form action="/api/family" method="post" id="form-create">
+            <label for="create-name">Family name</label>
+            <input type="text" name="name" id="create-name" placeholder="The Smithies">
+            <label for="create-size">Family size</label>
+            <input type="number" name="familySize" id="create-size" placeholder="4">
+            <label for="createDescription">Description</label>
+            <textarea name="description" id="create-description" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <label for="create-diet">Diet</label>
+            <select name="diet" id="create-diet">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="create-habits">Habits</label>
+            <select name="habits" id="create-habits">
+              <option value="">--Select an entry--</option>
+            </select>
+            <span>
+              <label for="create-has-pets">Pets</label>
+              <input type="checkbox" name="pets" id="create-pets">
+            </span>
+            <label for="create-allergies">Allergies</label>
+            <select name="allergies" id="create-allergies">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="create-children">children</label>
+            <select name="childrenAgeGroups" id="create-children">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="image">Image url</label>
+            <input type="text" name="image" id="create-image">
+            <button type="button" onclick="CreateSubmit()">Execute</button>
+          </form>
+        </div>
+        <div id="update">
+          <h2>Update</h2>
+          <form action="/api/family" method="put" id="form-update">
+            <label for="update-id">Family ID</label>
+            <select name="id" id="update-id" onchange="FillExisting()">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="update-name">Family name</label>
+            <input type="text" name="name" id="update-name" placeholder="The Smithies">
+            <label for="update-size">Family size</label>
+            <input type="number" name="familySize" id="update-size" placeholder="4">
+            <label for="updateDescription">Description</label>
+            <textarea name="description" id="update-description" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <label for="update-diet">Diet</label>
+            <select name="diet" id="update-diet">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="update-habits">Habits</label>
+            <select name="habits" id="update-habits">
+              <option value="">--Select an entry--</option>
+            </select>
+            <span>
+              <label for="update-has-pets">Pets</label>
+              <input type="checkbox" name="pets" id="update-pets">
+            </span>
+            <label for="update-allergies">Allergies</label>
+            <select name="allergies" id="update-allergies">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="update-children">children</label>
+            <select name="childrenAgeGroups" id="update-children">
+              <option value="">--Select an entry--</option>
+            </select>
+            <label for="image">Image URL</label>
+            <input type="text" name="image" id="update-image">
+            <button type="button" onclick="UpdateSubmit()">Execute</button>
+          </form>
+        </div>
+        <div id="delete">
+          <h2>Delete</h2>
+          <form action="" id="form-delete">
+            <label for="update-id">Family ID</label>
+            <select name="id" id="delete-id">
+              <option value="">--Select an entry--</option>
+            </select>
+            <button type="button" onclick="DeleteSubmit()">Execute</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
