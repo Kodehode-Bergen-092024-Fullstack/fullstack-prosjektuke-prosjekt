@@ -6,6 +6,8 @@ body {
   color: #333;
   background-color: #b3aea3;
   background: url("./image/bg/image2.jpg") no-repeat center center/cover;
+  background-attachment: scroll;
+   background-attachment: fixed;
 }
 html {
   scroll-behavior: smooth;
@@ -108,6 +110,14 @@ ul {
   flex: 1;
   max-width: 50%;
 }
+.text-container {
+  background-color: rgba(223, 214, 132, 0.3); /* Şeffaf beyaz */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  border: 2px solid #d4af37;
+}
+
 
 .about h2 {
   font-size: 2.5rem;
@@ -167,7 +177,9 @@ ul {
   }
 }
 
+
 /* content-section */
+
 #content-section {
   display: flex;
   gap: 20px;
@@ -176,25 +188,53 @@ ul {
 }
 
 /* Filtre section*/
+/* Filtreleme Bölümü */
 #filters {
-  margin-top: 7%;
-  flex: 0 0 30%;/* Filter area width */
-
+  margin-top: 6%;
+  flex: 0 0 30%; 
   background-color: #f9f9f9;
   border: 2px solid #d4af37;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
-  height: 100vh; /* Tam yükseklik */
+  height: auto;
+  max-height: 100vh;
 }
 
 #filters h2 {
   color: #b71c1c;
   font-family: "Pacifico", cursive;
   margin-bottom: 20px;
+  text-align: center; /* Başlık ortalanır */
+  font-size: 1.8rem;
 }
 
+/* 🟢 Search (Arama) Kutusu */
+#search {
+  width: 60%; /* Tam genişlik */
+  padding: 12px 15px; /* İç boşluk */
+  border: 2px solid #d4af37; /* Altın çerçeve */
+  border-radius: 8px; /* Yuvarlak köşeler */
+  font-size: 16px; /* Yazı boyutu */
+  color: #333; /* Yazı rengi */
+  background-color: #ffffff; /* Arka plan */
+  margin-bottom: 20px; /* Alttaki bölüme boşluk bırak */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+#search::placeholder {
+  color: #999; /* Placeholder rengi */
+  font-style: italic; /* İtalik yazı stili */
+}
+
+#search:focus {
+  outline: none; /* Varsayılan mavi çerçeveyi kaldır */
+  border-color: #b71c1c; /* Kırmızı kenarlık */
+  box-shadow: 0 0 8px #b71c1c; /* Odağındaki gölge */
+}
+
+/* Accordion Ayarları */
 .accordion-item {
   margin-bottom: 10px;
 }
@@ -206,11 +246,8 @@ ul {
   padding: 15px;
   font-size: 16px;
   text-align: left;
-  border: none;
   border-radius: 5px;
   width: 100%;
-  outline: none;
-  transition: background-color 0.3s;
 }
 
 .accordion-header:hover {
@@ -222,41 +259,40 @@ ul {
   padding: 10px 15px;
   background-color: #f1f1f1;
   border-radius: 5px;
+  margin-top: 5px;
 }
 
-.accordion-body label,
-.accordion-body textarea {
+.accordion-item.open .accordion-body {
   display: block;
-  margin-bottom: 10px;
 }
 
-textarea#additional-message,
-textarea#other-allergy {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
+/* 🟡 Apply (Uygula) Butonu */
 .btn-primary {
   display: block;
-  width: 100%;
+  width: 100%; /* Buton tam genişlikte olur */
   text-align: center;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 12px 0; /* Dikey boşluk */
+  font-size: 16px; /* Yazı boyutu */
   font-weight: bold;
-  background-color: #b71c1c;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  background-color: #b71c1c; /* Kırmızı arka plan */
+  color: white; /* Beyaz yazı rengi */
+  border: none; 
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Gölge efekti */
 }
 
 .btn-primary:hover {
-  background-color: #d32f2f;
+  background-color: #d32f2f; /* Hover rengi */
+  transform: scale(1.02); /* Buton biraz büyür */
 }
+
+.btn-primary:active {
+  transform: scale(0.98); /* Tıklanınca küçülür */
+}
+
+
 
 /* familie section */
 .families {
@@ -278,6 +314,10 @@ textarea#other-allergy {
 }
 
 .family-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* İçeriği kartın altına ve üstüne yayar */
+  height: 450px; 
   background-color: white;
   border: 2px solid #d4af37;
   border-radius: 10px;
@@ -287,8 +327,9 @@ textarea#other-allergy {
 }
 
 .family-card img {
+  border-top: 5%;
   max-width: 100%;
-  height: 150px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -300,13 +341,31 @@ textarea#other-allergy {
 }
 
 .family-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
 .family-card strong {
   font-weight: bold;
 }
+.btn-book {
+  margin-top: auto;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color:#b71c1c;
+  color:white ;
+  border-radius: 8px;
+  cursor: pointer;
+  border: #218838 solid 3px;
+  font-size: 1rem;
+} 
+
+.btn-book:hover {
+  background-color: #388e3c;
+  color: #ac1c1c;
+}
+
 
 /* Responsive  */
 @media (max-width: 768px) {
@@ -324,7 +383,6 @@ textarea#other-allergy {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
-
 /* Contact section*/
 .contact {
   padding: 50px 20px;
@@ -372,4 +430,55 @@ form button {
 
 form button:hover {
   background-color: #218838;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Booking Modal */
+.modal-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #b71c1c;
+}
+
+.close-btn:hover {
+  color: #d32f2f;
+}
+
+#booking-modal img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  #content-section {
+    flex-direction: column;
+  }
+
+  #filters {
+    width: 100%;
+  }
+
+  .family-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

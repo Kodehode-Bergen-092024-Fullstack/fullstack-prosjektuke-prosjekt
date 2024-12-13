@@ -27,7 +27,7 @@
 
       <!-- About Section -->
       <section id="about" class="about">
-        <div>
+        <div class="text-container">
           <h2>Celebrate together 🎉🎉</h2>
 
           <h3>Connect with families in need</h3>
@@ -44,34 +44,15 @@
 
         <img src="./image/bg/image1.jpg" alt="Families celebrating together" />
       </section>
+
       <!-- Filter and Family List -->
+
       <section id="content-section">
         <div id="filters">
-          <h2>🎄 Filter Families 🎁</h2>
+          <input type="text" id="search" placeholder="Search families..." />
 
+          <h2>🎄 Filter Families 🎁</h2>
           <div class="accordion">
-            <!-- Household Size -->
-            <div class="accordion-item">
-              <button class="accordion-header">Household Size</button>
-              <div class="accordion-body">
-                <label
-                  ><input type="checkbox" name="household-size" value="1-2" />
-                  1-2 people</label
-                >
-                <label
-                  ><input type="checkbox" name="household-size" value="3-4" />
-                  3-4 people</label
-                >
-                <label
-                  ><input type="checkbox" name="household-size" value="5-6" />
-                  5-6 people</label
-                >
-                <label
-                  ><input type="checkbox" name="household-size" value="7+" /> 7+
-                  people</label
-                >
-              </div>
-            </div>
 
             <!-- Number of People to Celebrate With -->
             <div class="accordion-item">
@@ -80,20 +61,20 @@
               </button>
               <div class="accordion-body">
                 <label
-                  ><input type="checkbox" name="celebration-size" value="1-2" />
-                  1-2 people</label
+                  ><input type="checkbox" data-celebration-size="1-2" /> 1-2
+                  people</label
                 >
                 <label
-                  ><input type="checkbox" name="celebration-size" value="3-4" />
-                  3-4 people</label
+                  ><input type="checkbox" data-celebration-size="3-4" /> 3-4
+                  people</label
                 >
                 <label
-                  ><input type="checkbox" name="celebration-size" value="5-6" />
-                  5-6 people</label
+                  ><input type="checkbox" data-celebration-size="5-6" /> 5-6
+                  people</label
                 >
                 <label
-                  ><input type="checkbox" name="celebration-size" value="7+" />
-                  7+ people</label
+                  ><input type="checkbox" data-celebration-size="7+" /> 7+
+                  people</label
                 >
               </div>
             </div>
@@ -102,18 +83,9 @@
             <div class="accordion-item">
               <button class="accordion-header">Dietary Preferences</button>
               <div class="accordion-body">
-                <label
-                  ><input type="checkbox" name="diet" value="vegetarian" />
-                  Vegetarian</label
-                >
-                <label
-                  ><input type="checkbox" name="diet" value="halal" />
-                  Halal</label
-                >
-                <label
-                  ><input type="checkbox" name="diet" value="lactose-free" />
-                  Lactose-Free</label
-                >
+                <label><input type="checkbox" data-trait="diet" data-trait-value="Vegetarian" /> Vegetarian</label>
+                <label><input type="checkbox" data-trait="diet" data-trait-value="Halal" /> Halal</label>
+                <label><input type="checkbox" data-trait="diet" data-trait-value="Lactose-Free" /> Lactose-Free</label>
               </div>
             </div>
 
@@ -121,27 +93,22 @@
             <div class="accordion-item">
               <button class="accordion-header">Habits</button>
               <div class="accordion-body">
-                <label
-                  ><input type="checkbox" name="habits" value="smoker" />
-                  Smoker</label
-                >
-                <label
-                  ><input type="checkbox" name="habits" value="alcohol" />
-                  Drinks Alcohol</label
-                >
+                <label><input type="checkbox" data-trait="habit" data-trait-value="Non-Smoker" /> Non-Smoker</label>
+                <label><input type="checkbox" data-trait="habit" data-trait-value="No Alcohol" /> No Alcohol</label>
+              </div>
+            
               </div>
             </div>
+
             <!-- Pets -->
             <div class="accordion-item">
               <button class="accordion-header">Pets</button>
               <div class="accordion-body">
                 <label
-                  ><input type="radio" name="pets" value="yes" /> Yes (Has
-                  Pets)</label
+                  ><input type="radio" name="hasPets" data-pets="yes" /> Yes (Has Pets)</label
                 >
                 <label
-                  ><input type="radio" name="pets" value="no" /> No (No
-                  Pets)</label
+                  ><input type="radio" name="hasPets" data-pets="no" /> No (No Pets)</label
                 >
               </div>
             </div>
@@ -150,45 +117,15 @@
             <div class="accordion-item">
               <button class="accordion-header">Pet Allergies</button>
               <div class="accordion-body">
-                <label
-                  ><input type="checkbox" name="pet-allergies" value="cats" />
-                  Cats</label
-                >
-                <label
-                  ><input type="checkbox" name="pet-allergies" value="dogs" />
-                  Dogs</label
-                >
-                <label
-                  ><input type="checkbox" name="pet-allergies" value="other" />
-                  Other</label
-                >
-              </div>
-            </div>
-
-            <!-- No Allergies To -->
-            <div class="accordion-item">
-              <button class="accordion-header">No Allergies To</button>
-              <div class="accordion-body">
-                <label
-                  ><input type="checkbox" name="allergies" value="eggs" />
-                  Eggs</label
-                >
-                <label
-                  ><input type="checkbox" name="allergies" value="nuts" />
-                  Nuts</label
-                >
-                <label
-                  ><input type="checkbox" name="allergies" value="gluten" />
-                  Gluten</label
-                >
-                <label
-                  ><input type="checkbox" name="allergies" value="other" />
-                  Other</label
-                >
-                <textarea
-                  id="other-allergy"
-                  placeholder="Please specify other allergies..."
-                ></textarea>
+                <label><input type="checkbox" data-trait="allergy" data-trait-value="Cats" /> Cats</label>
+                <label><input type="checkbox" data-trait="allergy" data-trait-value="Dogs" /> Dogs</label>
+                <label><input type="checkbox" data-trait="allergy" data-trait-value="Other" id="other-allergy-checkbox" /> Other</label>
+            
+                <!-- Other seçildiğinde gösterilecek metin kutusu -->
+                <textarea id="other-allergy-text" placeholder="Specify your allergy..." style="display:none;"></textarea>
+            
+                <!-- Other seçildiğinde bilgilendirme mesajı -->
+                <p id="other-allergy-message" style="display:none; color: red; font-weight: bold;">This information will be sent to the family you choose.</p>
               </div>
             </div>
 
@@ -196,20 +133,41 @@
             <div class="accordion-item">
               <button class="accordion-header">Children's Age Group</button>
               <div class="accordion-body">
+                <label><input type="checkbox" data-group="0-3" /> 0-3</label>
+                <label><input type="checkbox" data-group="4-10" /> 4-10</label>
                 <label
-                  ><input type="checkbox" name="children-age" value="0-3" />
-                  0-3</label
-                >
-                <label
-                  ><input type="checkbox" name="children-age" value="4-10" />
-                  4-10</label
-                >
-                <label
-                  ><input type="checkbox" name="children-age" value="11-17" />
-                  11-17</label
+                  ><input type="checkbox" data-group="11-17" /> 11-17</label
                 >
               </div>
             </div>
+
+            <!-- No Allergies To -->
+<div class="accordion-item" style="margin-top: 10px;">
+  <button class="accordion-header">No Allergies To</button>
+  <div class="accordion-body">
+    <label>
+      <input type="checkbox" data-allergies-food="eggs" /> Eggs
+    </label>
+    <label>
+      <input type="checkbox" data-allergies-food="nuts" /> Nuts
+    </label>
+    <label>
+      <input type="checkbox" data-allergies-food="gluten" /> Gluten
+    </label>
+    <label>
+      <input type="checkbox" data-allergies="other" /> Other
+    </label>
+    <textarea
+      id="other-allergy"
+      placeholder="Please specify other allergies..."
+      style="display: none;"
+    ></textarea>
+    <!-- Onay mesajı -->
+    <p id="allergy-message">Your information has been sent to the family you choose.</p>
+    <button id="send-allergy-info" class="btn-primary" style="margin-top: 10px;">Send Allergy Info</button>
+  </div>
+</div>
+            
 
             <!-- Additional Information -->
             <div class="accordion-item">
@@ -220,18 +178,23 @@
                   placeholder="Add any additional information here..."
                   rows="4"
                 ></textarea>
+                <p id="additional-message">Your information has been sent successfully.</p>
+                <button id="send-additional-info" class="btn-primary" style="margin-top: 10px;">Send Additional Info</button>
               </div>
             </div>
+
+          
+
+            <button type="button" id="apply-filters" class="btn-primary">
+              Apply Filters
+            </button>
+        </div>
           </div>
 
-          <button type="button" id="apply-filters" class="btn-primary">
-            Apply Filters
-          </button>
-        </div>
 
         <!-- Families Section -->
         <section id="families" class="families">
-          <h2> 👨‍👩‍👧  Our Families ❤️</h2>
+          <h2>👨‍👩‍👧 Our Families ❤️</h2>
           <div class="family-list"></div>
         </section>
       </section>
@@ -262,6 +225,37 @@
       </section>
     </main>
 
-    <script src="./app.js"></script>
+    <!-- Booking Modal (Popup Penceresi) -->
+    <div id="booking-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeBookingModal()">&times;</span>
+        <h2 id="modal-family-name"></h2>
+        <img id="modal-family-image" src="" alt="Family Image" />
+        <p id="modal-family-description"></p>
+        <strong id="modal-family-size"></strong>
+        <strong id="modal-family-diet"></strong>
+        <strong id="modal-family-habits"></strong>
+
+        <!-- Booking Form -->
+        <h3>Book Your Visit</h3>
+        <input type="text" id="booking-name" placeholder="Your Name" required />
+        <input
+          type="email"
+          id="booking-email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          id="booking-message"
+          placeholder="Your Message"
+          rows="4"
+        ></textarea>
+        <button class="btn-primary" onclick="submitBooking()">
+          Submit Booking
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
