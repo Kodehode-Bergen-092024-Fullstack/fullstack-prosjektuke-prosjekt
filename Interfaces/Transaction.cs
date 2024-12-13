@@ -9,8 +9,9 @@ public interface Transaction<T, Id>
     /// Add new data to the backing storage
     /// </summary>
     /// <param name="data">Data which contains an id of Id</param>
+    /// <param name="id">Out param of the valid ID for the resource, whether it is created or not</param>
     /// <returns>true if successful, false if not</returns>
-    bool Add(T data);
+    bool Add(T data, out Id id);
 
     // parametric ID to support either simple numeric indexing or GUID/uuid k->v mapping
     /// <summary>

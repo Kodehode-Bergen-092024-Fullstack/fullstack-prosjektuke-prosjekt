@@ -1,5 +1,7 @@
+using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Mvc;
 using prosjekt_uke.Context;
+using prosjekt_uke.DTO;
 using prosjekt_uke.Models;
 
 [ApiController]
@@ -19,7 +21,6 @@ public class ApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult GetFamilies()
     {
-        _logger.LogInformation("");
         return Ok(_dataContext.AsEnumerable().ToList());
     }
 
@@ -33,8 +34,9 @@ public class ApiController : ControllerBase
     [HttpGet("family/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult GetFamily(int id)
+    public IActionResult GetFamily(Guid id)
     {
+        _logger.LogInformation("Family ID: {id}", id);
         var family = _dataContext.Get(id);
 
         if (family is not null)
@@ -57,12 +59,13 @@ public class ApiController : ControllerBase
     [HttpPost("family")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult CreateFamily([FromBody] Family family)
+    public IActionResult CreateFamily([FromBody] FamilyDTO familyDTO)
     {
-        bool added = _dataContext.Add(family);
+        _logger.LogInformation("Family DTO: {@familyDTO}", familyDTO);
+        bool added = _dataContext.Add(familyDTO, out var id);
         if (added)
         {
-            return Ok(new { family.Id });
+            return Ok(new { id });
         }
         else
         {
@@ -80,8 +83,9 @@ public class ApiController : ControllerBase
     [HttpDelete("family/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult DeleteFamily(int id)
+    public IActionResult DeleteFamily(Guid id)
     {
+        _logger.LogInformation("Family ID: {id}", id);
         bool deleted = _dataContext.Remove(id);
         if (deleted)
         {
@@ -104,8 +108,9 @@ public class ApiController : ControllerBase
     [HttpPut("family/{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public IActionResult ReplaceFamily(int id, [FromBody] Family family)
+    public IActionResult ReplaceFamily(Guid id, [FromBody] Family family)
     {
+        _logger.LogInformation("Family: {@family}", family);
         var replaced = _dataContext.Update(id, family);
         if (replaced)
         {
