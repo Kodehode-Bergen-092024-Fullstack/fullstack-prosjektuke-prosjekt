@@ -5,13 +5,13 @@ namespace prosjekt_uke.Models;
 public class FamilyJson
 {
     [JsonPropertyName("id")]
-    public required int Id { get; set; }
+    public required string Id { get; set; }
 
     [JsonPropertyName("name")]
     public required string Name { get; set; }
 
-    [JsonPropertyName("familySize")]
-    public required int FamilySize { get; set; }
+    [JsonPropertyName("celebratesize")]
+    public required int CelebrateSize { get; set; }
 
     [JsonPropertyName("description")]
     public required string Description { get; set; }
@@ -30,6 +30,9 @@ public class FamilyJson
 
     [JsonPropertyName("childrenAgeGroups")]
     public required string[] ChildrenAgeGroups { get; set; }
+
+    [JsonPropertyName("pet")]
+    public required string[] Pet { get; set; }
 
     [JsonPropertyName("image")]
     public required string ImageUrl { get; set; }
