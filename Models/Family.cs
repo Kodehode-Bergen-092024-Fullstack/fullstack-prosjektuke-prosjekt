@@ -10,7 +10,7 @@ public class Family
 
     public string Name { get; set; }
 
-    public int FamilySize { get; set; }
+    public int CelebrateSize { get; set; }
 
     public string Description { get; set; }
 
@@ -38,7 +38,7 @@ public class Family
             Id = Guid.CreateVersion7();
         }
         Name = f.Name;
-        FamilySize = f.FamilySize;
+        CelebrateSize = f.CelebrateSize;
         Description = f.Description;
         Diet = f.Diet;
         Habits = f.Habits;
@@ -63,7 +63,7 @@ public class Family
     {
         Id = Guid.CreateVersion7();
         Name = f.Name;
-        FamilySize = f.FamilySize;
+        CelebrateSize = f.FamilySize;
         Description = f.Description;
         Diet = f.Diet;
         Habits = f.Habits;

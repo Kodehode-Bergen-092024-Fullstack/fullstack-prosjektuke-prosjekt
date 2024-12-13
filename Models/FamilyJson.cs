@@ -10,8 +10,8 @@ public class FamilyJson
     [JsonPropertyName("name")]
     public required string Name { get; set; }
 
-    [JsonPropertyName("familySize")]
-    public required int FamilySize { get; set; }
+    [JsonPropertyName("celebratesize")]
+    public required int CelebrateSize { get; set; }
 
     [JsonPropertyName("description")]
     public required string Description { get; set; }
