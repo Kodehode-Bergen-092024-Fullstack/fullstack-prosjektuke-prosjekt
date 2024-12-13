@@ -189,6 +189,7 @@ ul {
 
 /* Filtre section*/
 
+
 #filters {
   margin-top: 6%;
   flex: 0 0 30%; 
@@ -199,7 +200,7 @@ ul {
   padding: 20px;
   overflow-y: auto;
   height: auto;
-  max-height: 100vh;
+  max-height: 80vh;
 }
 
 #filters h2 {
@@ -232,6 +233,15 @@ ul {
   outline: none; 
   border-color: #b71c1c; 
   box-shadow: 0 0 8px #b71c1c; 
+}
+
+#search-button{
+  border: 2px solid #d4af37;
+  background-color: #b71c1c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  
 }
 
 /* Accordion*/
@@ -468,6 +478,16 @@ form button:hover {
   border-radius: 10px;
   margin-bottom: 15px;
 }
+
+#other-allergy {
+  display: none;
+}
+
+#allergy-message {
+  display: none;
+  color: red;
+  font-weight: bold;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   #content-section {
@@ -478,6 +498,13 @@ form button:hover {
     width: 100%;
   }
 
+  @media (max-width: 768px) {
+    #filters {
+      width: 100%;
+      position: relative;
+      height: auto;
+    }
+  }
   .family-list {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
