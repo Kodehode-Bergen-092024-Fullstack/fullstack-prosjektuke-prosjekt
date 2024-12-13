@@ -1,11 +1,11 @@
-// 1️⃣ API URL and global variables
+//  API URL and global variables
 const API_URL = "data.json";
 let families = [];
 const output = document.querySelector(".family-list");
 const searchInput = document.getElementById("search");
 const filters = document.querySelectorAll('#filters input[type="checkbox"], #filters input[type="radio"]');
 
-// 2️⃣ Fetch JSON data and display all families on the screen
+//  Fetch JSON data and display all families on the screen
 async function fetchFamilies() {
   const loadingMessage = document.getElementById('loading');
   loadingMessage.style.display = 'block'; // Show loading message
@@ -22,7 +22,7 @@ async function fetchFamilies() {
   }
 }
 
-// 3️⃣ Render family cards on the screen
+// Render family cards on the screen
 function renderFamilies(array) {
   output.innerHTML = ""; // Clear previous family list
   if (array.length === 0) {
@@ -43,13 +43,10 @@ function renderFamilies(array) {
 }
 
 
-// 4️⃣ Filter families based on user input
+// Filter families based on user input
 function filterFamilies() {
   
   const searchQuery = searchInput.value.toLowerCase().trim();
-  console.log('search query:', searchQuery); // 🔥 Konsolda arama sorgusunu gör
-
-
   const selectedCelebrateSizes = Array.from(document.querySelectorAll("input[data-celebration-size]:checked"))
     .map(input => input.getAttribute("data-celebration-size"));
 
@@ -110,14 +107,14 @@ function filterFamilies() {
 
   renderFamilies(filteredFamilies); // Display filtered families
 }
-// 📌 5️⃣ Search Butonuna tıklama ve Enter tuşu ile arama
+// Click the Search Button and search with the Enter key
 
 const searchButton = document.getElementById("search-button");
 
-searchButton.addEventListener("click", filterFamilies); // Butona tıklama
+searchButton.addEventListener("click", filterFamilies); // Click the button
 searchInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    filterFamilies(); // Enter tuşuna basıldığında filtreleme çalışır
+    filterFamilies(); // Filtering works when the Enter key is pressed
   }
 });
 
@@ -198,8 +195,6 @@ accordionHeaders.forEach(header => {
     }
   });
 });
-
-
 
 // Fetch family data on page load
 fetchFamilies();
