@@ -16,13 +16,13 @@
       <div id="container">
         <div id="create">
           <h2>Create</h2>
-          <form action="/api/family" method="post">
+          <form action="/api/family" method="post" id="form-create">
             <label for="create-name">Family name</label>
             <input type="text" name="name" id="create-name" placeholder="The Smithies">
             <label for="create-size">Family size</label>
             <input type="number" name="familySize" id="create-size" placeholder="4">
             <label for="createDescription">Description</label>
-            <textarea name="description" id="createDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <textarea name="description" id="create-description" placeholder="Lorem ipsum dolor sit amet"></textarea>
             <label for="create-diet">Diet</label>
             <select name="diet" id="create-diet">
               <option value="">--Select an entry--</option>
@@ -50,9 +50,9 @@
         </div>
         <div id="update">
           <h2>Update</h2>
-          <form action="/api/family" method="put">
+          <form action="/api/family" method="put" id="form-update">
             <label for="update-id">Family ID</label>
-            <select name="id" id="upload-id">
+            <select name="id" id="update-id" onchange="FillExisting()">
               <option value="">--Select an entry--</option>
             </select>
             <label for="update-name">Family name</label>
@@ -60,7 +60,7 @@
             <label for="update-size">Family size</label>
             <input type="number" name="familySize" id="update-size" placeholder="4">
             <label for="updateDescription">Description</label>
-            <textarea name="description" id="updateDescription" placeholder="Lorem ipsum dolor sit amet"></textarea>
+            <textarea name="description" id="update-description" placeholder="Lorem ipsum dolor sit amet"></textarea>
             <label for="update-diet">Diet</label>
             <select name="diet" id="update-diet">
               <option value="">--Select an entry--</option>
@@ -88,12 +88,12 @@
         </div>
         <div id="delete">
           <h2>Delete</h2>
-          <form action="">
+          <form action="" id="form-delete">
             <label for="update-id">Family ID</label>
             <select name="id" id="delete-id">
               <option value="">--Select an entry--</option>
             </select>
-            <button type="submit">Execute</button>
+            <button type="button" onclick="DeleteSubmit()">Execute</button>
           </form>
         </div>
       </div>
