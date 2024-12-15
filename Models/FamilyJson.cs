@@ -25,6 +25,9 @@ public class FamilyJson
     [JsonPropertyName("HasPets")]
     public required bool HasPets { get; set; }
 
+    [JsonPropertyName("HasChildren")]
+    public bool HasChildren { get; set; } = false;
+
     [JsonPropertyName("Allergies")]
     public required string[] Allergies { get; set; }
 

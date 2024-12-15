@@ -113,9 +113,19 @@ public class DataContext : Transaction<Family, Guid>, IEnumerable<Family>
     {
         try
         {
+            File.Delete("./data.json");
+        }
+        catch (Exception exc)
+        {
+            _logger.LogError("Could not perform deletion: {@exc}", exc);
+        }
+        try
+        {
             using (var stream = File.OpenWrite("./data.json"))
             {
-                JsonSerializer.Serialize(stream, Families);
+                var options = new JsonSerializerOptions();
+                options.WriteIndented = true;
+                JsonSerializer.Serialize(stream, Families, options: options);
                 _logger.LogDebug("Successfully serialized data");
                 return true;
             }

@@ -22,10 +22,23 @@
     <main>
       <!-- Home Section -->
       <section id="home" class="home">
+        <svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Yay şekli için bir path tanımlıyoruz -->
+          <path id="arc" d="M 10,150 A 300,150 0 0,1 550,150" fill="transparent" />
+      
+          <!-- Yazıyı path'e bağlayarak yay şeklinde gösteriyoruz -->
+          <text fill="white" font-size="24" text-anchor="middle">
+              <textPath href="#arc" startOffset="50%">
+                   Merry   Christmas 
+              </textPath>
+          </text>
+      </svg>
+      
+        
+       
         <h1>🎄 Celebrate Together 🎉</h1>
         <p>Connect with families to share the joy of Christmas.</p>
     </section>
-
     <!-- About Section -->
     <section id="about" class="about">
       <div class="text-container">
@@ -64,14 +77,10 @@
               Number of People to Celebrate With
             </button>
             <div class="accordion-body">
-              <label><input type="checkbox" data-celebration-size="1-2" /> 1-2
-                people</label>
-              <label><input type="checkbox" data-celebration-size="3-4" /> 3-4
-                people</label>
-              <label><input type="checkbox" data-celebration-size="5-6" /> 5-6
-                people</label>
-              <label><input type="checkbox" data-celebration-size="7+" /> 7+
-                people</label>
+              <label><input type="checkbox" data-celebration-size="1-2" /> 1-2 people</label>
+              <label><input type="checkbox" data-celebration-size="3-4" /> 3-4 people</label>
+              <label><input type="checkbox" data-celebration-size="5-6" /> 5-6 people</label>
+              <label><input type="checkbox" data-celebration-size="7+" /> 7+ people</label>
             </div>
           </div>
 
@@ -81,7 +90,7 @@
             <div class="accordion-body">
               <label><input type="checkbox" data-trait="diet" data-trait-value="Vegetarian" /> Vegetarian</label>
               <label><input type="checkbox" data-trait="diet" data-trait-value="Halal" /> Halal</label>
-              <label><input type="checkbox" data-trait="diet" data-trait-value="Lactose-Free" /> Lactose-Free</label>
+              <label><input type="checkbox" data-trait="diet" data-trait-value="Lactose-free" /> Lactose-Free</label>
             </div>
           </div>
 
@@ -89,12 +98,11 @@
           <div class="accordion-item">
             <button class="accordion-header">Habits</button>
             <div class="accordion-body">
-              <label><input type="checkbox" data-trait="habit" data-trait-value="Non-Smoker" /> Non-Smoker</label>
-              <label><input type="checkbox" data-trait="habit" data-trait-value="No Alcohol" /> No Alcohol</label>
+              <label><input type="checkbox" data-trait="habit" data-trait-value="Non-smoker" /> Non-Smoker</label>
+              <label><input type="checkbox" data-trait="habit" data-trait-value="No alcohol" /> No Alcohol</label>
             </div>
-
           </div>
-        </div>
+     
 
         <!-- Pets -->
         <div class="accordion-item">
@@ -109,10 +117,10 @@
         <div class="accordion-item">
           <button class="accordion-header">Pet Allergies</button>
           <div class="accordion-body">
-            <label><input type="checkbox" data-trait="allergy" data-trait-value="Cats" /> Cats</label>
-            <label><input type="checkbox" data-trait="allergy" data-trait-value="Dogs" /> Dogs</label>
+            <label><input type="checkbox" data-trait="pet-allergy" data-trait-value="Cats" /> Cats</label>
+            <label><input type="checkbox" data-trait="pet-allergy" data-trait-value="Dogs" /> Dogs</label>
             <label>
-              <input type="checkbox" id="other-allergy-checkbox" data-trait="allergy" data-trait-value="Other" /> Other
+              <input type="checkbox" id="other-allergy-checkbox" data-trait="pet-allergy" data-trait-value="Other" /> Other
             </label>
             <textarea
             id="other-allergy-text"
@@ -166,25 +174,12 @@
               style="display: none;"></textarea>
 
             <!-- Onay mesajı -->
-            <p id="allergy-message-food" style="display: none; color: red; font-weight: bold;">Your information has been sent
+            <p id="allergy-message-food" style="display: none; color:green; font-weight: bold;">Your information has been sent
               to the family you choose.</p>
 
             <button id="send-allergy-food-info" class="btn-primary" style="margin-top: 10px;">Send Allergy Info</button>
           </div>
         </div>
-
-        <!-- Additional Information -->
-        <div class="accordion-item">
-          <button class="accordion-header">Additional Information</button>
-          <div class="accordion-body">
-            <textarea id="additional-message" placeholder="Add any additional information here..." rows="4"></textarea>
-            <p id="additional-message">Your information has been sent successfully.</p>
-            <button id="send-additional-info" class="btn-primary" style="margin-top: 10px;">Send Additional
-              Info</button>
-          </div>
-        </div>
-
-
 
         <button type="button" id="apply-filters" class="btn-primary">
           Apply Filters
@@ -204,7 +199,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
+      <div  class="christmas-border">
       <h2>Join us for Christmas</h2>
+
+      <p style="font-weight: bold;">Do you have any questions or would you like to collaborate with us? Fill out the form below and we will contact you as soon as possible!</p>
 
       <form id="contact-form">
         <label for="name">Name</label>
@@ -225,32 +223,44 @@
 
         <button type="submit" class="btn-primary">Submit</button>
       </form>
+    </div>
     </section>
   </main>
 
-  <!-- Booking Modal (Popup Penceresi) -->
-  <div id="booking-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeBookingModal()">&times;</span>
-      <h2 id="modal-family-name"></h2>
-      <img id="modal-family-image" src="" alt="Family Image" />
-      <p id="modal-family-description"></p>
-      <strong id="modal-family-size"></strong>
-      <strong id="modal-family-diet"></strong>
-      <strong id="modal-family-habits"></strong>
-
-      <!-- Booking Form -->
-      <h3>Book Your Visit</h3>
-      <input type="text" id="booking-name" placeholder="Your Name" required />
-      <input type="email" id="booking-email" placeholder="Your Email" required />
-      <textarea id="booking-message" placeholder="Your Message" rows="4"></textarea>
-      <button class="btn-primary" onclick="submitBooking()">
-        Submit Booking
-      </button>
+  <!-- Book Now Modal -->
+<div id="bookNowModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <h2>Book a Christmas Celebration</h2>
+    <div id="familyDetails">
+      <!-- Family details dynamically rendered here -->
     </div>
-  </div>
+    <h3>Provide Your Details</h3>
+    <form id="bookingForm" class="form-modal">
+      <label for="name">Full Name</label>
+      <input type="text" id="userName" placeholder="Your full name" required />
 
-  <script type="module" src="./app.js"></script>
+      <label for="email">Email</label>
+      <input type="email" id="userEmail" placeholder="Your email" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="userPhone" placeholder="Your phone number" required />
+
+      <label for="guestCount">Number of Guests</label>
+      <input type="number" id="guestCount" placeholder="Number of people joining" required min="1" />
+
+      <label for="additionalInfo">Additional Information</label>
+      <textarea id="additionalInfo" placeholder="Add any allergies or extra information"></textarea>
+
+      <button type="button" id="sendBookingMessage">Send</button>
+
+      <button type="button" onclick="closeModal()">Close</button>
+    </form>
+  </div>
+</div>
+
+<script src="./app.js" defer></script>
 </body>
+
 
 </html>
