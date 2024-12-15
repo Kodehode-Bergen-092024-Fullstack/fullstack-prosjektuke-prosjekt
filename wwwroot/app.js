@@ -33,6 +33,7 @@ function renderFamilies(array) {
         <h3>${family.name}</h3>
         <p>${family.description}</p>
         <button class="btn-book" onclick="openBookingModal('${family.id}')">Book Now</button>
+
       `;
       output.appendChild(familyCard);
     });
@@ -188,3 +189,79 @@ document.querySelectorAll(".accordion-header").forEach(header => {
     }
   });
 });
+
+//==============================
+
+
+
+//==modal
+
+// Modal elementlerini seçiyoruz
+const modal = document.getElementById("bookNowModal");
+const familyDetailsContainer = document.getElementById("familyDetails");
+// Modal'ı aç
+
+
+
+window.openBookingModal = function(familyId) {
+  const selectedFamily = families.find(family => family.id === familyId);
+
+  if (!selectedFamily) {
+    console.error("Family not found for ID:", familyId);
+    return;
+  }
+
+  const familyDetailsContainer = document.getElementById("familyDetails");
+  familyDetailsContainer.innerHTML = `
+    <h3>${selectedFamily.name}</h3>
+    <img src="${selectedFamily.image}" alt="${selectedFamily.name}" style="width:100%;border-radius:5px;margin-bottom:10px;">
+    <p><strong>Description:</strong> ${selectedFamily.description}</p>
+    <p><strong>Celebrate Size:</strong> ${selectedFamily.celebrateSize}</p>
+    <p><strong>Diet Preferences:</strong> ${selectedFamily.diet.join(", ") || "No preferences"}</p>
+    <p><strong>Habits:</strong> ${selectedFamily.habits.join(", ") || "No specific habits"}</p>
+    <p><strong>Allergies:</strong> ${selectedFamily.allergies.join(", ") || "No allergies"}</p>
+    <p><strong>Children Age Groups:</strong> ${selectedFamily.childrenAgeGroups.join(", ") || "No children"}</p>
+  `;
+
+  const modal = document.getElementById("bookNowModal");
+  modal.style.display = "flex";
+  modal.dataset.familyId = familyId;
+};
+
+window.closeModal = function() {
+  const modal = document.getElementById("bookNowModal");
+  modal.style.display = "none";
+  document.getElementById("bookingForm").reset();
+};
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sendButton = document.getElementById("sendBookingMessage");
+  sendButton.addEventListener("click", sendBookingMessage);
+});
+
+// Booking mesajını gönder
+window.sendBookingMessage = function () {
+  const familyId = document.getElementById("bookNowModal").dataset.familyId;
+  console.log("Sending booking for familyId:", familyId);
+
+  if (!familyId) {
+    console.error("No familyId found in modal!");
+    return;
+  }
+
+  const selectedFamily = families.find(f => f.Id === familyId); // Büyük harfle "Id"
+  if (!selectedFamily) {
+    console.error("Family not found in families array for ID:", familyId);
+    return;
+  }
+
+  console.log("Booking details for:", selectedFamily.Name);
+  alert(`Your booking request for "${selectedFamily.Name}" has been sent!`);
+  closeModal();
+};
+
+
+window.closeModal = function () {
+  document.getElementById("bookNowModal").style.display = "none";
+};

@@ -102,6 +102,77 @@ ul {
   font-weight: 500;
 }
 
+
+svg {
+  overflow: visible;
+}
+
+/* Parlayan Yazı */
+text {
+  
+  fill: red;
+  animation: colorChange 2s infinite;
+  font-size: 4rem;
+    text-align: center;
+    color: red; /* Varsayılan başlangıç rengi */
+    animation: colorChange 2s infinite; /* 2 saniyede bir renk değişir */
+    text-shadow: 0px 0px 10px #FF0000, 0px 0px 20px #00FF00, 0px 0px 30px #FFFFFF;
+    animation: bounce 2s infinite ease-in-out, colorChange 2s infinite;
+}
+
+/* Renk Animasyonu */
+@keyframes colorChange {
+  0% {
+      fill: red;
+  }
+  33% {
+      fill: green;
+  }
+  66% {
+      fill: white;
+  }
+  100% {
+      fill: red;
+  }
+}
+
+
+@keyframes colorChange {
+  0% {
+      color: red;
+      text-shadow: 0px 0px 10px #FF0000;
+  }
+  33% {
+      color: green;
+      text-shadow: 0px 0px 10px #00FF00;
+  }
+  66% {
+      color: white;
+      text-shadow: 0px 0px 10px #FFFFFF;
+  }
+  100% {
+      color: red;
+      text-shadow: 0px 0px 10px #FF0000;
+  }
+}
+@keyframes glow {
+  0%, 100% {
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000;
+  }
+  50% {
+      text-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00, 0 0 50px #FFFFFF;
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+
 /* About Section */
 .about {
   display: flex;
@@ -429,6 +500,7 @@ ul {
 /* Contact section*/
 .contact {
   padding: 50px 20px;
+  margin-top: 10%;
 }
 
 .contact h2 {
@@ -439,6 +511,7 @@ ul {
 }
 
 .contact p {
+  
   text-align: center;
   font-size: 1.3rem;
   color:green;
@@ -487,51 +560,77 @@ form button:hover {
   background-color: #218838;
 }
 
+
+
 .modal {
-  display: none;
+  display: none; /* Initially hidden */
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Booking Modal */
-.modal-content {
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+.close-button {
+  float: right;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: #b71c1c;
+  color: #333;
 }
 
-.close-btn:hover {
-  color: #d32f2f;
-}
-
-#booking-modal img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-#other-allergy {
-  display: none;
-}
-
-#allergy-message {
-  display: none;
-  color: red;
+.form-modal label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-modal input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d4af37;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#familyDetails {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 1.2rem;
+
 }
 
 /* Responsive Design */
