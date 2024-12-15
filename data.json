@@ -34,6 +34,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -57,6 +58,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "nuts"
     ],
@@ -80,6 +82,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "gluten"
     ],
@@ -103,6 +106,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "nuts"
     ],
@@ -125,6 +129,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "eggs"
     ],
@@ -146,6 +151,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -165,6 +171,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -184,13 +191,16 @@
       "No alcohol"
     ],
     "HasPets": true,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
     "ChildrenAgeGroups": [
       "4-10"
     ],
-    "Pet": ["Bunny"],
+    "Pet": [
+      "Bunny"
+    ],
     "Image": "./image/familie/family_0193bde9-d3f1-7e7f-b6c7-21c0c97b0b64.jpg"
   },
   {
@@ -205,13 +215,16 @@
       "Non-smoker"
     ],
     "HasPets": true,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
     "ChildrenAgeGroups": [
       "4-10"
     ],
-    "Pet": ["Cats"],
+    "Pet": [
+      "Cats"
+    ],
     "Image": "./image/familie/family_0193bde9-d3f2-7ee5-8003-4626f1cd9305.jpg"
   },
   {
@@ -226,6 +239,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "eggs"
     ],
@@ -248,6 +262,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -270,6 +285,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -293,6 +309,7 @@
       "No alcohol"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -302,7 +319,7 @@
   },
   {
     "Id": "0193bde9-d3f2-7802-a94e-8635427723e1",
-    "Name": "The Grandparent's Christmas",
+    "Name": "The Grandparent\u0027s Christmas",
     "CelebrateSize": 2,
     "Description": "A lovely elderly couple enjoying their Christmas with their adorable cat.",
     "Diet": [
@@ -313,11 +330,14 @@
       "No alcohol"
     ],
     "HasPets": true,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
     "ChildrenAgeGroups": [],
-    "Pet": ["Cats"],
+    "Pet": [
+      "Cats"
+    ],
     "Image": "./image/familie/family_0193bde9-d3f2-7802-a94e-8635427723e1.jpg"
   },
   {
@@ -332,6 +352,7 @@
       "Non-smoker"
     ],
     "HasPets": true,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -339,15 +360,17 @@
       "0-3",
       "4-10"
     ],
-    "Pet": ["Cats",
-  "Dogs"],
+    "Pet": [
+      "Cats",
+      "Dogs"
+    ],
     "Image": "./image/familie/family_0193bde9-d3f2-7bd9-bcc0-43249e90f8a9.jpg"
   },
   {
     "Id": "0193bde9-d3f2-7b56-9b29-fd8dda1323fa",
     "Name": "The Reindeer Family",
     "CelebrateSize": 3,
-    "Description": "A joyful family celebrating their baby's first Christmas.",
+    "Description": "A joyful family celebrating their baby\u0027s first Christmas.",
     "Diet": [
       "Vegetarian"
     ],
@@ -355,6 +378,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -376,6 +400,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -385,7 +410,7 @@
   },
   {
     "Id": "0193bde9-d3f2-76b3-a3ee-e758b412c8f0",
-    "Name": "The Grandparents' Christmas",
+    "Name": "The Grandparents\u0027 Christmas",
     "CelebrateSize": 8,
     "Description": "A heartwarming couple who enjoys celebrating Christmas surrounded by cozy decorations.",
     "Diet": [
@@ -395,6 +420,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
@@ -415,6 +441,7 @@
       "Non-smoker"
     ],
     "HasPets": false,
+    "HasChildren": false,
     "Allergies": [
       "none"
     ],
