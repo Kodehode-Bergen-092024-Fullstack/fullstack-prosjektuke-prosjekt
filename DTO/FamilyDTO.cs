@@ -4,7 +4,7 @@ public class FamilyDTO
 {
     public required string Name { get; set; }
 
-    public required int FamilySize { get; set; }
+    public required int CelebrateSize { get; set; }
 
     public required string Description { get; set; }
 
@@ -13,6 +13,8 @@ public class FamilyDTO
     public required string[] Habits { get; set; }
 
     public required bool HasPets { get; set; }
+
+    public required bool HasChildren { get; set; }
 
     public required string[] Allergies { get; set; }
 

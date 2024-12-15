@@ -20,6 +20,8 @@ public class Family
 
     public bool HasPets { get; set; }
 
+    public bool HasChildren { get; set; }
+
     public string[] Allergies { get; set; }
 
     public string[] ChildrenAgeGroups { get; set; }
@@ -45,6 +47,7 @@ public class Family
         Diet = f.Diet;
         Habits = f.Habits;
         HasPets = f.HasPets;
+        HasChildren = f.HasChildren;
         Allergies = f.Allergies;
         Pet = f.Pet;
         ChildrenAgeGroups = f.ChildrenAgeGroups;
@@ -66,11 +69,12 @@ public class Family
     {
         Id = Guid.CreateVersion7();
         Name = f.Name;
-        CelebrateSize = f.FamilySize;
+        CelebrateSize = f.CelebrateSize;
         Description = f.Description;
         Diet = f.Diet;
         Habits = f.Habits;
         HasPets = f.HasPets;
+        HasChildren = f.HasChildren;
         Allergies = f.Allergies;
         ChildrenAgeGroups = f.ChildrenAgeGroups;
         Pet = f.Pet;
