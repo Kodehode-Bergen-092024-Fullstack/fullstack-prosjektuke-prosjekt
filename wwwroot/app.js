@@ -290,7 +290,7 @@ window.sendBookingMessage = function () {
     return;
   }
 
-  const selectedFamily = families.find(f => f.Id === familyId); // Büyük harfle "Id"
+  const selectedFamily = families.find(f => f.id === familyId); // Büyük harfle "Id"
   if (!selectedFamily) {
     console.error("Family not found in families array for ID:", familyId);
     return;
