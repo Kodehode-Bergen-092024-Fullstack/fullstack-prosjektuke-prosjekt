@@ -2,7 +2,7 @@
   {
     "id": "0193bde9-d3f0-7463-9285-b029f9993b14",
     "name": "The Holiday Family",
-    "celebratesize": 1,
+    "celebrateSize": 1,
     "description": "A cheerful family that loves celebrating Christmas together by the fireplace.",
     "diet": [
       "Vegetarian"
@@ -24,7 +24,7 @@
   {
     "id": "0193bde9-d3f1-7042-9d68-b168709df5e7",
     "name": "The Festive Family",
-    "celebratesize": 5,
+    "celebrateSize": 5,
     "description": "A warm and lively extended family that loves celebrating Christmas together.",
     "diet": [
       "Halal"
@@ -48,7 +48,7 @@
   {
     "id": "0193bde9-d3f1-7963-adf3-cc5189fe9695",
     "name": "The Joyful Family",
-    "celebratesize": 4,
+    "celebrateSize": 4,
     "description": "A happy and caring family who enjoys cozy winter nights by the fireplace.",
     "diet": [
       "Vegetarian"
@@ -70,7 +70,7 @@
   {
     "id": "0193bde9-d3f1-71f3-98b1-6d5fe1027914",
     "name": "The Cozy Family",
-    "celebratesize": 5,
+    "celebrateSize": 5,
     "description": "A close-knit family that loves spending time together during the holidays.",
     "diet": [
       "Vegetarian",
@@ -93,7 +93,7 @@
   {
     "id": "0193bde9-d3f1-7f75-bea3-fece008185ef",
     "name": "The Jolly Family",
-    "celebratesize": 3,
+    "celebrateSize": 3,
     "description": "A festive family that brings the holiday spirit wherever they go.",
     "diet": [
       ""
@@ -116,7 +116,7 @@
   {
     "id": "0193bde9-d3f1-73fc-8e53-ca6b68501f5b",
     "name": "The Nordic Family",
-    "celebratesize": 3,
+    "celebrateSize": 3,
     "description": "A small and loving family enjoying the Christmas season surrounded by Norwegian traditions.",
     "diet": [
       "Vegetarian"
@@ -137,7 +137,7 @@
   {
     "id": "0193bde9-d3f1-7347-96ee-f64b9e578fe3",
     "name": "The Warm Hearts",
-    "celebratesize": 2,
+    "celebrateSize": 2,
     "description": "A loving couple celebrating Christmas in their cozy home.",
     "diet": [
       "Lactose-free"
@@ -156,7 +156,7 @@
   {
     "id": "0193bde9-d3f1-785b-b8d5-43853ca7ea34",
     "name": "The Elegant Couple",
-    "celebratesize": 8,
+    "celebrateSize": 8,
     "description": "A sophisticated couple celebrating Christmas in their beautifully decorated home.",
     "diet": [
       "Lactose-free"
@@ -175,7 +175,7 @@
   {
     "id": "0193bde9-d3f1-7e7f-b6c7-21c0c97b0b64",
     "name": "The Bunny Family",
-    "celebratesize": 1,
+    "celebrateSize": 1,
     "description": "A cheerful family with a lovable pet bunny.",
     "diet": [
       "Halal"
@@ -196,7 +196,7 @@
   {
     "id": "0193bde9-d3f2-7ee5-8003-4626f1cd9305",
     "name": "The Cozy Cat Family",
-    "celebratesize": 3,
+    "celebrateSize": 3,
     "description": "A loving family with their adorable pet cat.",
     "diet": [
       "Vegetarian"
@@ -217,7 +217,7 @@
   {
     "id": "0193bde9-d3f2-7d9d-bfce-b7580fc38b35",
     "name": "The Tropical Christmas Family",
-    "celebratesize": 5,
+    "celebrateSize": 5,
     "description": "A lively family celebrating Christmas by the beach.",
     "diet": [
       "Halal"
@@ -239,7 +239,7 @@
   {
     "id": "0193bde9-d3f2-78d4-a24c-8b7786d2e5fe",
     "name": "The Gifted Family",
-    "celebratesize": 4,
+    "celebrateSize": 4,
     "description": "A cheerful family who loves sharing gifts and spreading holiday joy.",
     "diet": [
       "Halal"
@@ -261,7 +261,7 @@
   {
     "id": "0193bde9-d3f2-7565-a5bb-f8ee62f6fd27",
     "name": "The Nordic Family 2",
-    "celebratesize": 6,
+    "celebrateSize": 6,
     "description": "A festive family enjoying the winter holidays surrounded by nature.",
     "diet": [
       "Vegetarian"
@@ -283,7 +283,7 @@
   {
     "id": "0193bde9-d3f2-7f8a-8c84-76fb49587f43",
     "name": "The Holiday Couple",
-    "celebratesize": 7,
+    "celebrateSize": 7,
     "description": "A loving couple who enjoys cozy holiday evenings by the fireplace.",
     "diet": [
       "Vegetarian"
@@ -303,7 +303,7 @@
   {
     "id": "0193bde9-d3f2-7802-a94e-8635427723e1",
     "name": "The Grandparent's Christmas",
-    "celebratesize": 2,
+    "celebrateSize": 2,
     "description": "A lovely elderly couple enjoying their Christmas with their adorable cat.",
     "diet": [
       "Vegetarian"
@@ -323,7 +323,7 @@
   {
     "id": "0193bde9-d3f2-7bd9-bcc0-43249e90f8a9",
     "name": "The Pet Lovers Family",
-    "celebratesize": 6,
+    "celebrateSize": 6,
     "description": "A lively family celebrating Christmas with their adorable dog and cat.",
     "diet": [
       "Halal"
@@ -346,7 +346,7 @@
   {
     "id": "0193bde9-d3f2-7b56-9b29-fd8dda1323fa",
     "name": "The Reindeer Family",
-    "celebratesize": 3,
+    "celebrateSize": 3,
     "description": "A joyful family celebrating their baby's first Christmas.",
     "diet": [
       "Vegetarian"
@@ -367,7 +367,7 @@
   {
     "id": "0193bde9-d3f2-78c5-8e1c-06b7a6adf8dc",
     "name": "The Festive Couple",
-    "celebratesize": 2,
+    "celebrateSize": 2,
     "description": "A cheerful couple who loves celebrating Christmas with a warm ambiance.",
     "diet": [
       "Halal"
@@ -386,7 +386,7 @@
   {
     "id": "0193bde9-d3f2-76b3-a3ee-e758b412c8f0",
     "name": "The Grandparents' Christmas",
-    "celebratesize": 8,
+    "celebrateSize": 8,
     "description": "A heartwarming couple who enjoys celebrating Christmas surrounded by cozy decorations.",
     "diet": [
       "Vegetarian"
@@ -405,7 +405,7 @@
   {
     "id": "0193bde9-d3f2-754d-8b15-71fe35e1ba9a",
     "name": "The Christmas Tree Enthusiasts",
-    "celebratesize": 5,
+    "celebrateSize": 5,
     "description": "A joyful family that loves spending Christmas around the tree.",
     "diet": [
       "Vegetarian",
