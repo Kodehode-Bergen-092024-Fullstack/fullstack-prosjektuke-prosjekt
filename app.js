@@ -1,5 +1,5 @@
 // API URL and global variables
-const API_URL = "/api/family/all"; // API endpoint for fetching families
+const API_URL = "./data.json"; // API endpoint for fetching families
 let families = []; // Array to store the fetched families
 const output = document.querySelector(".family-list"); // Container for displaying families
 const searchInput = document.getElementById("search"); // Search input box
