@@ -1,0 +1,35 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+div>form {
+    display: flex;
+    flex-direction: column;
+}
+
+form>* {
+    margin: 0vh 0vh 1vh 0vh;
+}
+
+select
+{
+    width: 100%;
+    min-width: 200px;
+}
+
+span {
+    padding: 1vh 0vh 1vh 0vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
